@@ -13,4 +13,5 @@ target 'MemeMe' do
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
   pod 'SwiftValidators'
+  pod 'SwiftKeychainWrapper'
 end

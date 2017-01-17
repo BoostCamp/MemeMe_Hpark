@@ -15,12 +15,20 @@ import FirebaseMessaging
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+import SwiftKeychainWrapper
 
 class EntranceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
+        // KeychainWrapper.standard.remove(key: KEY_UID)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "wayToMemesDisplay", sender: nil)
+        }
     }
     
     // Open Facebook Login Manager in order to get credential from it
@@ -46,7 +54,10 @@ class EntranceViewController: UIViewController {
                 print(":::[HPARK] Unable to authenticate with Firebase - \(error) :::\n")
             } else {
                 print(":::[HPARK] Successfully authenticated with Firebase :::\n")
-                // TODO: Segue to Main Page
+                if let user = user {
+                    KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                }
+                self.performSegue(withIdentifier: "wayToMemesDisplay", sender: nil)
             }
         })
     }

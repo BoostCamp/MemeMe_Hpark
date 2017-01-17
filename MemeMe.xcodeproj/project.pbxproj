@@ -18,6 +18,8 @@
 		F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAA1E2D28A400322491 /* TestViewController.swift */; };
 		F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */; };
 		F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */; };
+		F1327FB21E2E79E300322491 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB11E2E79E300322491 /* Constants.swift */; };
+		F1327FB41E2E7DC500322491 /* MainMemesDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		F1327FAA1E2D28A400322491 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewController.swift; sourceTree = "<group>"; };
 		F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
+		F1327FB11E2E79E300322491 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMemesDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 		F1327F8A1E2BD06000322491 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				F1327FB01E2E79B700322491 /* Util */,
 				F1327FA71E2D1B2300322491 /* MemeMe.entitlements */,
 				F1327FA61E2BD3F400322491 /* Extension */,
 				F1327FA51E2BD3EC00322491 /* Resource */,
@@ -124,6 +129,7 @@
 				F1327FAA1E2D28A400322491 /* TestViewController.swift */,
 				F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */,
 				F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */,
+				F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -143,6 +149,14 @@
 			children = (
 			);
 			name = Extension;
+			sourceTree = "<group>";
+		};
+		F1327FB01E2E79B700322491 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F1327FB11E2E79E300322491 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,10 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1327FB41E2E7DC500322491 /* MainMemesDisplayViewController.swift in Sources */,
 				F1327F941E2BD06000322491 /* MemeMe.xcdatamodeld in Sources */,
 				F1327F8E1E2BD06000322491 /* EntranceViewController.swift in Sources */,
 				F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */,
 				F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */,
+				F1327FB21E2E79E300322491 /* Constants.swift in Sources */,
 				F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */,
 				F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */,
 			);

@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SwiftValidators
+import SwiftKeychainWrapper
 
 class SignInWithEmailViewController: UIViewController {
     
@@ -46,7 +47,10 @@ class SignInWithEmailViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print(":::[HPARK] Successfully signed in the app with email :::\n")
-                    // segue to main screen
+                    if let user = user {
+                        KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                    }
+                    self.performSegue(withIdentifier: "wayToMemesDisplayByEmail", sender: nil)
                 } else {
                     print(":::[HPARK] Login failed with \(error) :::\n")
                     alert.message = "잘못된 이메일이나 비밀번호입니다"
