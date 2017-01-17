@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+import FBSDKLoginKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // KVO for firebase push notification
         if #available(iOS 8.0, *) {
             let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
@@ -31,6 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FIRApp.configure()
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification(notification:)), name: NSNotification.Name.firInstanceIDTokenRefresh, object: nil)
+        
+        // Facebook Authentication
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
         return true
     }
@@ -62,6 +67,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //self.saveContext()
     }
 
+    // MARK: - Opening FaceBook Authentication Url 
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    }
+    
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
