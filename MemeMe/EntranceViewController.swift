@@ -15,6 +15,7 @@ import FirebaseMessaging
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+
 class EntranceViewController: UIViewController {
 
     override func viewDidLoad() {
