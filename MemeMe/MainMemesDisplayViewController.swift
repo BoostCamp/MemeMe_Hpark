@@ -11,8 +11,8 @@ import SwiftKeychainWrapper
 import Firebase
 
 class MainMemesDisplayViewController: UIViewController {
-
-    @IBOutlet weak var pickerModalView: UIView!
+    
+    @IBOutlet weak var newPostButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,6 @@ class MainMemesDisplayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        pickerModalView.isHidden = true
     }
     
     @IBAction func menuButtonTapped(_ sender: Any) {
@@ -29,4 +28,15 @@ class MainMemesDisplayViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func homeButtonTapped(_ sender: Any) {
+        newPostButton.isEnabled = false
+    }
+    
+    @IBAction func newPostButtonTapped(_ sender: Any) {
+        let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController
+        self.addChildViewController(popOverNewPostViewController)
+        popOverNewPostViewController.view.frame = self.view.frame
+        self.view.addSubview(popOverNewPostViewController.view)
+        popOverNewPostViewController.didMove(toParentViewController: self)
+    }
 }
