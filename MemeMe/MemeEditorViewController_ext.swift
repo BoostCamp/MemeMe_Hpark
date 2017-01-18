@@ -14,6 +14,7 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
     func presentImagePickerController(_ source: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
+        imagePickerController.sourceType = source
         present(imagePickerController, animated: true, completion: nil)
     }
     

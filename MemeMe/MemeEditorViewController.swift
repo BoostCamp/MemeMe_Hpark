@@ -26,7 +26,13 @@ class MemeEditorViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
 
     func setNavigationBarUI() {
@@ -45,7 +51,7 @@ class MemeEditorViewController: UIViewController {
         }
     }
     
-    func setTextFieldAttribute(key:String) {
+    func setTextFieldAttribute(key: String) {
         if key == KEY_TEXT_FIELD_TOP {
             self.topMemeTextField.text = key
             self.topMemeTextField.delegate = self
@@ -54,6 +60,36 @@ class MemeEditorViewController: UIViewController {
             self.bottomMemeTextField.delegate = self
         }
     }
+    
+    // get keyboard height and shift the view from bottom to higher
+    func keyboardWillShow(_ notification: Notification) {
+        if bottomMemeTextField.isFirstResponder {
+            view.frame.origin.y = 64 - getKeyboardHeight(notification)
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        if bottomMemeTextField.isFirstResponder {
+            view.frame.origin.y = 64
+        }
+    }
+    
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+    
     
     func activityButtonTapped() {
         print("activityButton Tapped")
