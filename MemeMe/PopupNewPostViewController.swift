@@ -22,13 +22,20 @@ class PopupNewPostViewController: UIViewController {
         
         self.memeTableView.delegate = self
         self.memeTableView.dataSource = self
-        
         fetchAllMeme()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     func fetchAllMeme() {
         let fetchRequest: NSFetchRequest<Meme> = Meme.fetchRequest()
-        let sortByDate = NSSortDescriptor(key: KEY_SORT_DATA_BY_DATE, ascending:false)
+        let sortByDate = NSSortDescriptor(key: KEY_SORT_DATA_BY_DATE, ascending:true)
         fetchRequest.sortDescriptors = [sortByDate]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)

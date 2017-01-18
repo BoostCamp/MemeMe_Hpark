@@ -36,6 +36,10 @@ class MemeEditorViewController: UIViewController {
     }
 
     func setNavigationBarUI() {
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+        }
+        
         let logo = UIImage(named: "Meme Home Logo")
         let logoImageView = UIImageView(image: logo)
         self.navigationItem.titleView = logoImageView
@@ -115,6 +119,12 @@ class MemeEditorViewController: UIViewController {
         if let textBottom = bottomMemeTextField.text {
             meme.textBottom = textBottom
         }
+        
+        if let image = imagePickedByUserView.image {
+            meme.memeImage = image
+        }
+        
+        meme.created = NSDate()
         
         appDelegate.saveContext()
         _ = self.navigationController?.popViewController(animated: true)
