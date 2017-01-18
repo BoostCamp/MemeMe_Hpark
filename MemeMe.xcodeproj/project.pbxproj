@@ -21,6 +21,9 @@
 		F1327FB21E2E79E300322491 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB11E2E79E300322491 /* Constants.swift */; };
 		F1327FB41E2E7DC500322491 /* MainMemesDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */; };
 		F1327FB61E2E935000322491 /* PopupNewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB51E2E935000322491 /* PopupNewPostViewController.swift */; };
+		F1327FB81E2F64AC00322491 /* MemeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB71E2F64AC00322491 /* MemeEditorViewController.swift */; };
+		F1327FBA1E2F6E5D00322491 /* MemeEditorViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB91E2F6E5D00322491 /* MemeEditorViewController_ext.swift */; };
+		F1327FBC1E2FC72C00322491 /* CustomMemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		F1327FB11E2E79E300322491 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMemesDisplayViewController.swift; sourceTree = "<group>"; };
 		F1327FB51E2E935000322491 /* PopupNewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupNewPostViewController.swift; sourceTree = "<group>"; };
+		F1327FB71E2F64AC00322491 /* MemeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController.swift; sourceTree = "<group>"; };
+		F1327FB91E2F6E5D00322491 /* MemeEditorViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeEditorViewController_ext.swift; sourceTree = "<group>"; };
+		F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMemeTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,7 @@
 			children = (
 				F1327F8F1E2BD06000322491 /* Main.storyboard */,
 				F1327F971E2BD06000322491 /* LaunchScreen.storyboard */,
+				F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */,
 				F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */,
 				F1327FB51E2E935000322491 /* PopupNewPostViewController.swift */,
+				F1327FB71E2F64AC00322491 /* MemeEditorViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 		F1327FA61E2BD3F400322491 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F1327FB91E2F6E5D00322491 /* MemeEditorViewController_ext.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -297,13 +306,16 @@
 			files = (
 				F1327FB61E2E935000322491 /* PopupNewPostViewController.swift in Sources */,
 				F1327FB41E2E7DC500322491 /* MainMemesDisplayViewController.swift in Sources */,
+				F1327FBA1E2F6E5D00322491 /* MemeEditorViewController_ext.swift in Sources */,
 				F1327F941E2BD06000322491 /* MemeMe.xcdatamodeld in Sources */,
+				F1327FBC1E2FC72C00322491 /* CustomMemeTextField.swift in Sources */,
 				F1327F8E1E2BD06000322491 /* EntranceViewController.swift in Sources */,
 				F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */,
 				F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */,
 				F1327FB21E2E79E300322491 /* Constants.swift in Sources */,
 				F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */,
 				F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */,
+				F1327FB81E2F64AC00322491 /* MemeEditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

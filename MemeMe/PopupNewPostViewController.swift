@@ -18,4 +18,7 @@ class PopupNewPostViewController: UIViewController {
     @IBAction func closePostButtonTapped(_ sender: Any) {
         self.view.removeFromSuperview()
     }
+    @IBAction func googims(_ sender: Any) {
+        performSegue(withIdentifier: "googims", sender: nil)
+    }
 }

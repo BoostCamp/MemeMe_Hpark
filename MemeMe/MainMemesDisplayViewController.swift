@@ -16,26 +16,41 @@ class MainMemesDisplayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    @IBAction func menuButtonTapped(_ sender: Any) {
+    func setNavigationBarUI() {
+        // logo image
+        let logo = UIImage(named: "Meme Home Logo")
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
+        
+        // nav bar style
+        navigationController?.navigationBar.barTintColor = UIColor(red: 28/255, green: 213/255, blue: 241/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        
+        // nav bar no border
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+    @IBAction func menuBarButtonTapped(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         try! FIRAuth.auth()?.signOut()
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func homeButtonTapped(_ sender: Any) {
-        newPostButton.isEnabled = false
     }
     
     @IBAction func newPostButtonTapped(_ sender: Any) {
         let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController
         self.addChildViewController(popOverNewPostViewController)
-        popOverNewPostViewController.view.frame = self.view.frame
+        popOverNewPostViewController.view.frame = CGRect(x: 0, y: -50, width: view.frame.size.width, height: view.frame.size.height + 50)
         self.view.addSubview(popOverNewPostViewController.view)
         popOverNewPostViewController.didMove(toParentViewController: self)
     }
