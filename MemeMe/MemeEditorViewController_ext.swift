@@ -35,4 +35,25 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
 
 extension MemeEditorViewController: UITextFieldDelegate {
     
+    // clear text field if it has default text (TOP or BOTTOM)
+    func clearDefaultText(textField:UITextField, compare:String) {
+        if textField.text == compare {
+            textField.text = ""
+        }
+    }
+    
+    // when start editing text in text field
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.topMemeTextField {
+            clearDefaultText(textField: textField, compare: KEY_TEXT_FIELD_TOP)
+        } else if textField == self.bottomMemeTextField {
+            clearDefaultText(textField: textField, compare: KEY_TEXT_FIELD_BOTTOM)
+        }
+    }
+    
+    // when return key pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
