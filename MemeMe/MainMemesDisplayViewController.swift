@@ -9,6 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
+import CoreData
 
 class MainMemesDisplayViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class MainMemesDisplayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let request: NSFetchRequest<Meme> = Meme.fetchRequest()
     }
     
     func setNavigationBarUI() {

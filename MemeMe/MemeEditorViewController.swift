@@ -103,6 +103,20 @@ class MemeEditorViewController: UIViewController {
         presentImagePickerController(.camera)
     }
     
-    
-    
+    // save meme into CoreData
+    @IBAction func saveMemeButtonTapped(_ sender: Any) {
+        var meme: Meme!
+        meme = Meme(context: context)
+        
+        if let textTop = topMemeTextField.text {
+            meme.textTop = textTop
+        }
+        
+        if let textBottom = bottomMemeTextField.text {
+            meme.textBottom = textBottom
+        }
+        
+        appDelegate.saveContext()
+        _ = self.navigationController?.popViewController(animated: true)
+    }
 }
