@@ -410,28 +410,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Df0-IA-Bqi">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="320" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Df0-IA-Bqi">
                                 <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPageTableViewCell" rowHeight="260" id="AdX-Ma-nLO" customClass="MainPageTableViewCell" customModule="MemeMe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="260"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPageTableViewCell" rowHeight="320" id="AdX-Ma-nLO" customClass="MainPageTableViewCell" customModule="MemeMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AdX-Ma-nLO" id="WoI-L1-kLa">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5N-KV-wiI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="259"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="Uvk-1D-CYl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                                                         </imageView>
                                                         <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHK-Wv-Pml">
                                                             <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arther Park" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtW-ue-Dn0">
-                                                                    <rect key="frame" x="80" y="1" width="200" height="27"/>
+                                                                    <rect key="frame" x="75" y="4" width="200" height="24"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="200" id="Wvp-qf-k9C"/>
                                                                     </constraints>
@@ -460,7 +460,7 @@
                                                             <constraints>
                                                                 <constraint firstItem="gPh-ee-Yik" firstAttribute="bottom" secondItem="XtW-ue-Dn0" secondAttribute="bottom" id="2Rl-xC-LCt"/>
                                                                 <constraint firstAttribute="trailing" secondItem="gPh-ee-Yik" secondAttribute="trailing" constant="8" id="E4m-j7-TeQ"/>
-                                                                <constraint firstItem="XtW-ue-Dn0" firstAttribute="top" secondItem="RHK-Wv-Pml" secondAttribute="top" constant="1" id="HwK-PC-7C8"/>
+                                                                <constraint firstItem="XtW-ue-Dn0" firstAttribute="top" secondItem="RHK-Wv-Pml" secondAttribute="top" constant="4" id="HwK-PC-7C8"/>
                                                                 <constraint firstAttribute="bottom" secondItem="gPh-ee-Yik" secondAttribute="bottom" constant="2" id="Z6B-i3-Mym"/>
                                                                 <constraint firstItem="T9V-VA-gi8" firstAttribute="centerY" secondItem="gPh-ee-Yik" secondAttribute="centerY" id="cSv-sL-eaZ"/>
                                                                 <constraint firstAttribute="height" constant="30" id="gOI-uQ-mJx"/>
@@ -468,14 +468,14 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-4h-1W8" customClass="CustomUserProfileImageView" customModule="MemeMe" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="8" width="64" height="64"/>
+                                                            <rect key="frame" x="3" y="3" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="64" id="Nh3-42-Ldx"/>
                                                                 <constraint firstAttribute="width" constant="64" id="OCh-AZ-jii"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="aC8-e2-TQN">
-                                                            <rect key="frame" x="0.0" y="219" width="320" height="40"/>
+                                                            <rect key="frame" x="0.0" y="280" width="320" height="40"/>
                                                             <subviews>
                                                                 <button opaque="NO" alpha="0.59999999999999998" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-4K-DMS">
                                                                     <rect key="frame" x="0.0" y="0.0" width="159.5" height="40"/>
@@ -494,11 +494,18 @@
                                                                 <constraint firstAttribute="height" constant="40" id="VFX-nw-Uf9"/>
                                                             </constraints>
                                                         </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-AH-mZb">
+                                                            <rect key="frame" x="270" y="191" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.1058823529" green="0.83921568629999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Uvk-1D-CYl" firstAttribute="trailing" secondItem="RHK-Wv-Pml" secondAttribute="trailing" id="1fG-ya-Qrf"/>
-                                                        <constraint firstItem="EBY-4h-1W8" firstAttribute="top" secondItem="w5N-KV-wiI" secondAttribute="top" constant="8" id="1uL-Ah-RW3"/>
+                                                        <constraint firstItem="EBY-4h-1W8" firstAttribute="top" secondItem="w5N-KV-wiI" secondAttribute="top" constant="3" id="1uL-Ah-RW3"/>
                                                         <constraint firstAttribute="trailing" secondItem="aC8-e2-TQN" secondAttribute="trailing" id="CAb-Kc-172"/>
                                                         <constraint firstItem="RHK-Wv-Pml" firstAttribute="top" secondItem="w5N-KV-wiI" secondAttribute="top" id="EZx-07-oPN"/>
                                                         <constraint firstItem="Uvk-1D-CYl" firstAttribute="top" secondItem="RHK-Wv-Pml" secondAttribute="top" id="JKF-d7-E2O"/>
@@ -508,7 +515,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="aC8-e2-TQN" secondAttribute="bottom" id="YYz-8h-wZy"/>
                                                         <constraint firstItem="Uvk-1D-CYl" firstAttribute="leading" secondItem="RHK-Wv-Pml" secondAttribute="leading" id="mxi-CU-Z08"/>
                                                         <constraint firstAttribute="trailing" secondItem="RHK-Wv-Pml" secondAttribute="trailing" id="rnE-Yp-SfZ"/>
-                                                        <constraint firstItem="EBY-4h-1W8" firstAttribute="leading" secondItem="w5N-KV-wiI" secondAttribute="leading" constant="8" id="rrf-ae-v04"/>
+                                                        <constraint firstItem="EBY-4h-1W8" firstAttribute="leading" secondItem="w5N-KV-wiI" secondAttribute="leading" constant="3" id="rrf-ae-v04"/>
                                                         <constraint firstAttribute="bottom" secondItem="Uvk-1D-CYl" secondAttribute="bottom" constant="20" id="yoQ-fa-UnL"/>
                                                     </constraints>
                                                 </view>
@@ -523,6 +530,7 @@
                                         <connections>
                                             <outlet property="dateTimeLabel" destination="gPh-ee-Yik" id="VRE-SE-YlM"/>
                                             <outlet property="mainImageView" destination="Uvk-1D-CYl" id="oMZ-n9-JBx"/>
+                                            <outlet property="numberLikesLabel" destination="ymf-AH-mZb" id="kL2-LN-qwt"/>
                                             <outlet property="userNameLabel" destination="XtW-ue-Dn0" id="bv9-ey-iQm"/>
                                             <outlet property="userProfileImageView" destination="EBY-4h-1W8" id="d6L-6x-Vgz"/>
                                         </connections>
@@ -605,6 +613,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="memesDisplayTableView" destination="Df0-IA-Bqi" id="Flw-fP-PPX"/>
                         <outlet property="newPostButton" destination="fRN-6n-JeX" id="hmn-Aj-dvZ"/>
                     </connections>
                 </viewController>

@@ -23,7 +23,7 @@ class CustomUserProfileImageView: UIImageView {
     override func draw(_ rect: CGRect) {
     }
     
-    func setBasicUserProfileImageUI() {
+    override func layoutSubviews() {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.width / 2
         

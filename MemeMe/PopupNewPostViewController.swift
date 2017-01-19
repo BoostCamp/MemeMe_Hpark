@@ -48,8 +48,6 @@ class PopupNewPostViewController: UIViewController {
         
         memeCollectionView.isHidden = true
         tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
-        
-        userImage.setBasicUserProfileImageUI()
         previewImage.setBasicPreviewImageUI()
     }
 
