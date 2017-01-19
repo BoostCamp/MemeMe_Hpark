@@ -18,6 +18,11 @@ class PopupNewPostViewController: UIViewController {
     @IBOutlet weak var memeCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     
+    @IBOutlet weak var popupView: UIView!
+    
+    @IBOutlet weak var collectionButton: UIButton!
+    @IBOutlet weak var tableButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionViewUI()
@@ -31,8 +36,8 @@ class PopupNewPostViewController: UIViewController {
         
         fetchAllMeme()
         
-        //memeTableView.isHidden = true
         memeCollectionView.isHidden = true
+        tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,15 +67,13 @@ class PopupNewPostViewController: UIViewController {
     
     func setCollectionViewUI() {
         let interItemSpace: CGFloat = 0.0
-        let lineSpace: CGFloat = 2.5
+        let lineSpace: CGFloat = 0.0
         
-        let demensionWidth = (view.frame.size.width - (3 * interItemSpace)) / 4.0
-        let demensionHeight = (view.frame.size.height - (5 * interItemSpace)) / 4.0
-        let entireDimension = min(demensionWidth, demensionHeight)
+        let demensionWidth = (popupView.frame.size.width) / 4.0
         
         collectionViewFlowLayout.minimumInteritemSpacing = interItemSpace
         collectionViewFlowLayout.minimumLineSpacing = lineSpace
-        collectionViewFlowLayout.itemSize = CGSize(width: entireDimension, height: entireDimension)
+        collectionViewFlowLayout.itemSize = CGSize(width: demensionWidth, height: demensionWidth)
     }
     
     @IBAction func closePostButtonTapped(_ sender: Any) {
@@ -82,6 +85,16 @@ class PopupNewPostViewController: UIViewController {
     }
     
     @IBAction func tableButtonTapped(_ sender: Any) {
+        memeTableView.isHidden = false
+        memeCollectionView.isHidden = true
+        tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
+        collectionButton.setImage(UIImage(named:"icon collection"), for: .normal)
     }
     
+    @IBAction func collectionButtonTapped(_ sender: Any) {
+        memeTableView.isHidden = true
+        memeCollectionView.isHidden = false
+        tableButton.setImage(UIImage(named:"icon table"), for: .normal)
+        collectionButton.setImage(UIImage(named:"icon collection picked"), for: .normal)
+    }
 }

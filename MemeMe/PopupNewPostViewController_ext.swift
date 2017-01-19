@@ -63,25 +63,32 @@ extension PopupNewPostViewController: NSFetchedResultsControllerDelegate {
         case .insert:
             if let indexPath = newIndexPath {
                 memeTableView.insertRows(at: [indexPath], with: .fade)
+                memeCollectionView.insertItems(at: [indexPath])
             }
             break
         case .delete:
             if let indexPath = indexPath {
                 memeTableView.deleteRows(at: [indexPath], with: .fade)
+                memeCollectionView.deleteItems(at: [indexPath])
             }
             break
         case .update:
             if let indexPath = indexPath {
                 let cell = memeTableView.cellForRow(at: indexPath) as! MemeTableViewCell
                 establishMemeCell(cell: cell, indexPath: indexPath)
+                let cellCollection = memeCollectionView.cellForItem(at: indexPath) as! MemeCollectionViewCell
+                let meme = self.memeController.object(at: indexPath)
+                cellCollection.establishMemeCell(meme: meme)
             }
             break
         case .move:
             if let indexPath = indexPath {
                 memeTableView.deleteRows(at: [indexPath], with: .fade)
+                memeCollectionView.deleteItems(at: [indexPath])
             }
             if let indexPath = newIndexPath {
                 memeTableView.insertRows(at: [indexPath], with: .fade)
+                memeCollectionView.insertItems(at: [indexPath])
             }
             break
         }

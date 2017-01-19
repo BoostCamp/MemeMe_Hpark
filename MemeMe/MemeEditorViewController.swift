@@ -75,6 +75,7 @@ class MemeEditorViewController: UIViewController {
     
     func createMemedImage() -> UIImage {
         setNavbarAndToolbarVisibility(false)
+        view.frame.origin.y = 24
         
         UIGraphicsBeginImageContext(view.frame.size)
         view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
@@ -82,6 +83,7 @@ class MemeEditorViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         setNavbarAndToolbarVisibility(true)
+        view.frame.origin.y = 64
         return memedImage
     }
     
