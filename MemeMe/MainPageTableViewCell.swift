@@ -11,10 +11,10 @@ import UIKit
 class MainPageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var userProfileImageView: CustomUserProfileImageView!
-    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var numberLikesLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

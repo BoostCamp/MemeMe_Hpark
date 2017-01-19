@@ -14,10 +14,14 @@ import CoreData
 class MainMemesDisplayViewController: UIViewController {
     
     @IBOutlet weak var newPostButton: UIButton!
+    @IBOutlet weak var memesDisplayTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarUI()
+        
+        self.memesDisplayTableView.delegate = self
+        self.memesDisplayTableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
