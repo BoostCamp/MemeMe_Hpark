@@ -62,7 +62,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
+<<<<<<< HEAD
             endingLineNumber = "22">
+=======
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+>>>>>>> meme-post
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -204,7 +210,13 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
+<<<<<<< HEAD
             endingLineNumber = "64">
+=======
+            endingLineNumber = "64"
+            landmarkName = "setCollectionViewUI()"
+            landmarkType = "7">
+>>>>>>> meme-post
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
