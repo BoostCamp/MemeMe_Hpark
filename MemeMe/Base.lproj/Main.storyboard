@@ -613,14 +613,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zv-eB-8V5">
                                 <rect key="frame" x="20" y="80" width="280" height="443"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="uzb-aR-OmA" userLabel="Selected Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="uzb-aR-OmA" userLabel="Selected Image" customClass="CustomPreviewImageView" customModule="MemeMe" customModuleProvider="target">
                                         <rect key="frame" x="208" y="8" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="BGi-bA-FyX"/>
                                             <constraint firstAttribute="width" constant="64" id="VG1-aa-uAZ"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="UhV-SK-tyh" userLabel="User Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="UhV-SK-tyh" userLabel="User Image" customClass="CustomUserProfileImageView" customModule="MemeMe" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="MHg-2c-P0o"/>
@@ -839,7 +839,9 @@
                         <outlet property="memeCollectionView" destination="O3M-RL-pcy" id="lRf-pX-vkL"/>
                         <outlet property="memeTableView" destination="9Td-z9-fNl" id="r7E-Fn-13g"/>
                         <outlet property="popupView" destination="4Zv-eB-8V5" id="g4M-lp-ahp"/>
+                        <outlet property="previewImage" destination="uzb-aR-OmA" id="Np7-ib-pwq"/>
                         <outlet property="tableButton" destination="ewF-On-O1p" id="39j-hY-kHj"/>
+                        <outlet property="userImage" destination="UhV-SK-tyh" id="zMn-jE-c3A"/>
                         <segue destination="tS7-ro-niQ" kind="show" identifier="addNewMeme" id="qYA-lg-syg"/>
                     </connections>
                 </viewController>

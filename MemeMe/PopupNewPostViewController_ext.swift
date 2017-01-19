@@ -23,8 +23,27 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
     
     // when selected particular cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let objects = memeController.fetchedObjects, objects.count > 0 {
-            let meme = objects[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MEME_TABLE_CELL, for: indexPath) as! MemeTableViewCell
+        
+        cell.contentView.layer.borderColor = UIColor.red.cgColor
+        cell.contentView.layer.borderWidth = 2.0
+//        if let index = self.preTableIndexPath {
+//            let preSelectedCell = tableView.cellForRow(at: index)
+//            preSelectedCell?.contentView.layer.borderColor = UIColor.white.cgColor
+//        }
+//    
+//        let newlySelectedCell = tableView.cellForRow(at: indexPath)
+//        
+//        newlySelectedCell?.layer.borderWidth = 1.8
+//        newlySelectedCell?.contentView.layer.borderColor = UIColor.red.cgColor
+//        self.preTableIndexPath = indexPath
+        cell.isSelected = true
+        //self.previewImage.image = newlySelectedCell.memeImageView.image
+        
+        if let objs = memeController.fetchedObjects , objs.count > 0 {
+            
+            let meme = objs[indexPath.row]
+            self.previewImage.image = meme.memeImage as! UIImage?
         }
     }
     
@@ -113,9 +132,18 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let objects = memeController.fetchedObjects, objects.count > 0 {
-            let meme = objects[indexPath.row]
+        if let index = self.preCollectionIndexPath {
+            let preSelectedCell = collectionView.cellForItem(at: index) as! MemeCollectionViewCell
+            preSelectedCell.layer.borderWidth = 0.0
         }
+        
+        let newlySelectedCell = collectionView.cellForItem(at: indexPath) as! MemeCollectionViewCell
+    
+        newlySelectedCell.layer.borderWidth = 1.8
+        newlySelectedCell.layer.borderColor = UIColor.red.cgColor
+        self.preCollectionIndexPath = indexPath
+        
+        self.previewImage.image = newlySelectedCell.memeImageView.image
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

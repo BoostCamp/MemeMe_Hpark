@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 
 class PopupNewPostViewController: UIViewController {
-
+    
+    var preTableIndexPath: IndexPath?
+    var preCollectionIndexPath: IndexPath?
     var memeController: NSFetchedResultsController<Meme>!
     
     @IBOutlet weak var addPostToolbar: UIToolbar!
@@ -22,6 +24,9 @@ class PopupNewPostViewController: UIViewController {
     
     @IBOutlet weak var collectionButton: UIButton!
     @IBOutlet weak var tableButton: UIButton!
+    
+    @IBOutlet weak var previewImage: CustomPreviewImageView!
+    @IBOutlet weak var userImage: CustomUserProfileImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +70,10 @@ class PopupNewPostViewController: UIViewController {
         }
     }
     
+    func setPopViewUI() {
+        
+    }
+    
     func setCollectionViewUI() {
         let interItemSpace: CGFloat = 0.0
         let lineSpace: CGFloat = 0.0
@@ -97,4 +106,6 @@ class PopupNewPostViewController: UIViewController {
         tableButton.setImage(UIImage(named:"icon table"), for: .normal)
         collectionButton.setImage(UIImage(named:"icon collection picked"), for: .normal)
     }
+    
+    
 }
