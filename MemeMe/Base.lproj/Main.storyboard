@@ -410,44 +410,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SW-SZ-ARg">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="center" distribution="fillEqually" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="W7x-42-WkP">
-                                        <rect key="frame" x="108" y="10" width="200" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXk-oW-CZS">
-                                                <rect key="frame" x="0.0" y="0.0" width="29" height="30"/>
-                                                <state key="normal" image="Main"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXf-CV-rdd">
-                                                <rect key="frame" x="57" y="0.0" width="29" height="30"/>
-                                                <state key="normal" image="Friends"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbK-Jt-lbo">
-                                                <rect key="frame" x="114" y="0.0" width="29" height="30"/>
-                                                <state key="normal" image="Activity"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjR-kc-uLY">
-                                                <rect key="frame" x="171" y="0.0" width="29" height="30"/>
-                                                <state key="normal" image="Settings"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="W7x-42-WkP" secondAttribute="bottom" constant="10" id="KUr-lN-Lgu"/>
-                                    <constraint firstAttribute="trailing" secondItem="W7x-42-WkP" secondAttribute="trailing" constant="12" id="Ta2-Ow-aYQ"/>
-                                    <constraint firstItem="W7x-42-WkP" firstAttribute="top" secondItem="2SW-SZ-ARg" secondAttribute="top" constant="10" id="cqQ-NH-njy"/>
-                                    <constraint firstAttribute="height" constant="50" id="soX-C0-KI6"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="260" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Df0-IA-Bqi">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="260" id="AdX-Ma-nLO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPageTableViewCell" rowHeight="260" id="AdX-Ma-nLO" customClass="MainPageTableViewCell" customModule="MemeMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="260"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AdX-Ma-nLO" id="WoI-L1-kLa">
@@ -473,14 +440,14 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DateTime" translatesAutoresizingMaskIntoConstraints="NO" id="T9V-VA-gi8">
-                                                                    <rect key="frame" x="234" y="14" width="12" height="12"/>
+                                                                    <rect key="frame" x="234" y="14.5" width="12" height="12"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="12" id="APJ-3s-FQn"/>
                                                                         <constraint firstAttribute="height" constant="12" id="QOi-so-wz4"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 min ago" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-ee-Yik">
-                                                                    <rect key="frame" x="248" y="11" width="64" height="17"/>
+                                                                    <rect key="frame" x="248" y="11.5" width="64" height="16.5"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="64" id="4ka-Ed-gHh"/>
                                                                     </constraints>
@@ -500,7 +467,7 @@
                                                                 <constraint firstItem="gPh-ee-Yik" firstAttribute="leading" secondItem="T9V-VA-gi8" secondAttribute="trailing" constant="2" id="gYu-Ci-tYD"/>
                                                             </constraints>
                                                         </view>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-4h-1W8">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceHolder Image" translatesAutoresizingMaskIntoConstraints="NO" id="EBY-4h-1W8" customClass="CustomUserProfileImageView" customModule="MemeMe" customModuleProvider="target">
                                                             <rect key="frame" x="8" y="8" width="64" height="64"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="64" id="Nh3-42-Ldx"/>
@@ -511,12 +478,12 @@
                                                             <rect key="frame" x="0.0" y="219" width="320" height="40"/>
                                                             <subviews>
                                                                 <button opaque="NO" alpha="0.59999999999999998" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-4K-DMS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="159.5" height="40"/>
                                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                     <state key="normal" image="Likes"/>
                                                                 </button>
                                                                 <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4U-mA-RqC">
-                                                                    <rect key="frame" x="161" y="0.0" width="159" height="40"/>
+                                                                    <rect key="frame" x="160.5" y="0.0" width="159.5" height="40"/>
                                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                                     <state key="normal" image="Comments">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -553,9 +520,57 @@
                                                 <constraint firstItem="w5N-KV-wiI" firstAttribute="top" secondItem="WoI-L1-kLa" secondAttribute="top" id="xNY-S7-yL2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateTimeLabel" destination="gPh-ee-Yik" id="VRE-SE-YlM"/>
+                                            <outlet property="mainImageView" destination="Uvk-1D-CYl" id="oMZ-n9-JBx"/>
+                                            <outlet property="userNameLabel" destination="XtW-ue-Dn0" id="bv9-ey-iQm"/>
+                                            <outlet property="userProfileImageView" destination="EBY-4h-1W8" id="d6L-6x-Vgz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpG-MA-gmj">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1jD-Mx-25d"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem width="100" style="plain" systemItem="fixedSpace" id="cOr-O9-UWA"/>
+                                    <barButtonItem style="plain" id="NkF-a0-hHE">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Vkt-nR-gwI">
+                                            <rect key="frame" x="116" y="9" width="29" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon house"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p3r-j1-lfB"/>
+                                    <barButtonItem style="plain" id="usm-NZ-plJ">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wUW-w2-ESM">
+                                            <rect key="frame" x="137" y="11" width="86" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon bell"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tVG-Nm-Gvk"/>
+                                    <barButtonItem style="plain" id="kyh-Mz-MZI">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uJy-PA-Muc">
+                                            <rect key="frame" x="216" y="8" width="33" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon users"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="I3F-uo-Yrt"/>
+                                    <barButtonItem style="plain" id="9KQ-54-tIb">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K1c-HT-Quc">
+                                            <rect key="frame" x="241" y="8" width="81" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" image="icon setting"/>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mRa-Yk-TV5"/>
+                                </items>
+                                <color key="barTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRN-6n-JeX" userLabel="New Post Button">
                                 <rect key="frame" x="8" y="494" width="88" height="88"/>
                                 <constraints>
@@ -570,15 +585,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2SW-SZ-ARg" firstAttribute="top" secondItem="Df0-IA-Bqi" secondAttribute="bottom" id="0Hm-wt-IDy"/>
-                            <constraint firstAttribute="bottom" secondItem="2SW-SZ-ARg" secondAttribute="bottom" id="But-RL-kMd"/>
+                            <constraint firstItem="dAv-Pb-Q6g" firstAttribute="top" secondItem="LpG-MA-gmj" secondAttribute="bottom" id="0Of-XJ-8ol"/>
+                            <constraint firstItem="LpG-MA-gmj" firstAttribute="top" secondItem="Df0-IA-Bqi" secondAttribute="bottom" id="4xg-o2-xwe"/>
                             <constraint firstAttribute="trailing" secondItem="Df0-IA-Bqi" secondAttribute="trailing" id="NOj-gn-AUY"/>
-                            <constraint firstItem="2SW-SZ-ARg" firstAttribute="leading" secondItem="60Q-8t-Mq7" secondAttribute="leading" id="Rxv-A6-LkC"/>
                             <constraint firstItem="dAv-Pb-Q6g" firstAttribute="top" secondItem="fRN-6n-JeX" secondAttribute="bottom" constant="-14" id="YPt-7y-LxY"/>
-                            <constraint firstAttribute="trailing" secondItem="2SW-SZ-ARg" secondAttribute="trailing" id="cDN-C5-fIE"/>
                             <constraint firstItem="fRN-6n-JeX" firstAttribute="leading" secondItem="60Q-8t-Mq7" secondAttribute="leadingMargin" constant="-8" id="cM5-hn-hTD"/>
+                            <constraint firstItem="LpG-MA-gmj" firstAttribute="leading" secondItem="60Q-8t-Mq7" secondAttribute="leading" id="kTx-tf-Saj"/>
                             <constraint firstItem="Df0-IA-Bqi" firstAttribute="leading" secondItem="60Q-8t-Mq7" secondAttribute="leading" id="ns6-bP-HA9"/>
-                            <constraint firstItem="W7x-42-WkP" firstAttribute="leading" secondItem="fRN-6n-JeX" secondAttribute="trailing" constant="12" id="ny2-a4-iE6"/>
+                            <constraint firstAttribute="trailing" secondItem="LpG-MA-gmj" secondAttribute="trailing" id="uwS-8h-29j"/>
                             <constraint firstItem="Df0-IA-Bqi" firstAttribute="top" secondItem="tKX-eL-edA" secondAttribute="bottom" id="z0G-hu-mij"/>
                         </constraints>
                     </view>
@@ -1001,19 +1015,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Activity" width="50" height="50"/>
         <image name="Cancel Button" width="48" height="48"/>
         <image name="Cancel Post Button" width="104" height="104"/>
         <image name="Comments" width="108" height="18"/>
         <image name="Cover" width="375" height="667"/>
         <image name="DateTime" width="50" height="50"/>
-        <image name="Friends" width="50" height="50"/>
         <image name="Likes" width="58" height="18"/>
         <image name="Login Button" width="275" height="50"/>
         <image name="Login Panel" width="272" height="72"/>
         <image name="Logo" width="294" height="57"/>
         <image name="Logo Shape" width="83" height="83"/>
-        <image name="Main" width="50" height="43"/>
         <image name="Main Background" width="375" height="667"/>
         <image name="Menu Button" width="24" height="12"/>
         <image name="New Post Button" width="102" height="102"/>
@@ -1021,16 +1032,19 @@
         <image name="Post Button" width="88" height="88"/>
         <image name="Register Button" width="275" height="50"/>
         <image name="Register Panel" width="313" height="72"/>
-        <image name="Settings" width="50" height="50"/>
         <image name="Sign In Email Btn" width="275" height="50"/>
         <image name="Sign In FB Btn" width="275" height="50"/>
         <image name="icon add meme" width="32" height="17"/>
         <image name="icon archive" width="32" height="27"/>
+        <image name="icon bell" width="26" height="29"/>
         <image name="icon camera" width="34" height="28"/>
         <image name="icon collection" width="20" height="20"/>
         <image name="icon disk" width="27" height="27"/>
+        <image name="icon house" width="29" height="27"/>
+        <image name="icon setting" width="27" height="28"/>
         <image name="icon table" width="23" height="17"/>
         <image name="icon trash" width="22" height="27"/>
+        <image name="icon users" width="33" height="29"/>
         <image name="share your precious" width="314" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
