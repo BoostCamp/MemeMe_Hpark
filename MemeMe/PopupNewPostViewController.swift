@@ -80,4 +80,8 @@ class PopupNewPostViewController: UIViewController {
     @IBAction func addMemeButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "addNewMeme", sender: nil)
     }
+    
+    @IBAction func tableButtonTapped(_ sender: Any) {
+    }
+    
 }
