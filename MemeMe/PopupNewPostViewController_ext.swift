@@ -19,7 +19,7 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
         let cell = memeTableView.dequeueReusableCell(withIdentifier: KEY_MEME_TABLE_CELL, for: indexPath) as! MemeTableViewCell
         establishMemeCell(cell: cell, indexPath: indexPath)
         
-        return UITableViewCell()
+        return cell
     }
     
     // when selected particular cell
@@ -28,6 +28,7 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
             
             let meme = objs[indexPath.row]
             self.previewImage.image = meme.memeImage as! UIImage?
+            self.memeToDelete = meme
         }
     }
     
@@ -128,6 +129,11 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
         self.preCollectionIndexPath = indexPath
         
         self.previewImage.image = newlySelectedCell.memeImageView.image
+        
+        if let objs = memeController.fetchedObjects, objs.count > 0 {
+            let meme = objs[indexPath.row]
+            self.memeToDelete = meme
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -135,5 +141,30 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
             return 0
         }
         return sections.count
+    }
+}
+
+extension PopupNewPostViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        var newText: NSString = textField.text! as NSString
+        newText = newText.replacingCharacters(in: range, with: string) as NSString
+    
+        if newText.length > 80 {
+            self.textLengthLabel.textColor = UIColor.red
+            self.memeIntroTextField.text = newText.substring(to: 79)
+        } else {
+            self.textLengthLabel.textColor = UIColor.darkGray
+        }
+        
+        // Write the length of newText into the label
+        self.textLengthLabel.text = "\(String(newText.length)) / 80 자"
+        
+        return true;
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.memeIntroTextField.resignFirstResponder()
+        return true
     }
 }

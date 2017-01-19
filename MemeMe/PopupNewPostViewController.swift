@@ -11,6 +11,7 @@ import CoreData
 
 class PopupNewPostViewController: UIViewController {
     
+    var memeToDelete: Meme?
     var preTableIndexPath: IndexPath?
     var preCollectionIndexPath: IndexPath?
     var memeController: NSFetchedResultsController<Meme>!
@@ -19,7 +20,8 @@ class PopupNewPostViewController: UIViewController {
     @IBOutlet weak var memeTableView: UITableView!
     @IBOutlet weak var memeCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var textLengthLabel: UILabel!
+    @IBOutlet weak var memeIntroTextField: UITextField!
     @IBOutlet weak var popupView: UIView!
     
     @IBOutlet weak var collectionButton: UIButton!
@@ -39,6 +41,8 @@ class PopupNewPostViewController: UIViewController {
         
         self.memeCollectionView.delegate = self
         self.memeCollectionView.dataSource = self
+        
+        self.memeIntroTextField.delegate = self
         
         fetchAllMeme()
         
@@ -111,5 +115,13 @@ class PopupNewPostViewController: UIViewController {
         collectionButton.setImage(UIImage(named:"icon collection picked"), for: .normal)
     }
     
+    @IBAction func trashButtonClicked(_ sender: Any) {
+        if self.memeToDelete != nil {
+            context.delete(self.memeToDelete!)
+            appDelegate.saveContext()
+            memeTableView.reloadData()
+            memeCollectionView.reloadData()
+        }
+    }
     
 }
