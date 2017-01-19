@@ -10,6 +10,7 @@
 		207ED91ECDC545BF1FBDA912 /* Pods_MemeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFF526101EFA7F93E4744C /* Pods_MemeMe.framework */; };
 		F11D36B71E3137A9008C3A17 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36B61E3137A9008C3A17 /* MainPageTableViewCell.swift */; };
 		F11D36B91E314541008C3A17 /* MainMemesDisplayViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36B81E314541008C3A17 /* MainMemesDisplayViewController_ext.swift */; };
+		F11D36BC1E315369008C3A17 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36BB1E315369008C3A17 /* DataService.swift */; };
 		F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327F8B1E2BD06000322491 /* AppDelegate.swift */; };
 		F1327F8E1E2BD06000322491 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327F8D1E2BD06000322491 /* EntranceViewController.swift */; };
 		F1327F911E2BD06000322491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1327F8F1E2BD06000322491 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		D6307032B5E21E2E7CF3D4C9 /* Pods-MemeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe.release.xcconfig"; sourceTree = "<group>"; };
 		F11D36B61E3137A9008C3A17 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		F11D36B81E314541008C3A17 /* MainMemesDisplayViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMemesDisplayViewController_ext.swift; sourceTree = "<group>"; };
+		F11D36BB1E315369008C3A17 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		F1327F881E2BD06000322491 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1327F8B1E2BD06000322491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1327F8D1E2BD06000322491 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F11D36BA1E315359008C3A17 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F11D36BB1E315369008C3A17 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		F1327F7F1E2BD06000322491 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		F1327F8A1E2BD06000322491 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				F11D36BA1E315359008C3A17 /* Services */,
 				F1327FB01E2E79B700322491 /* Util */,
 				F1327FA71E2D1B2300322491 /* MemeMe.entitlements */,
 				F1327FA61E2BD3F400322491 /* Extension */,
@@ -344,6 +355,7 @@
 				F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */,
 				F1327FB81E2F64AC00322491 /* MemeEditorViewController.swift in Sources */,
 				F11D36B91E314541008C3A17 /* MainMemesDisplayViewController_ext.swift in Sources */,
+				F11D36BC1E315369008C3A17 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
