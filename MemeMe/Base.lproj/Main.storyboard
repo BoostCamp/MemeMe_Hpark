@@ -670,6 +670,40 @@
                                         </items>
                                         <color key="barTintColor" red="0.31372549019607843" green="0.8901960784313725" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                                     </toolbar>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O3M-RL-pcy">
+                                        <rect key="frame" x="0.0" y="216" width="280" height="227"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0mb-24-FDa">
+                                            <size key="itemSize" width="50" height="50"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemeCollectionViewCell" id="CRh-5g-Fep" userLabel="MemeCollectionViewCell" customClass="MemeCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cwo-Ag-SNb" userLabel="Meme Image">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                </view>
+                                                <constraints>
+                                                    <constraint firstItem="cwo-Ag-SNb" firstAttribute="top" secondItem="CRh-5g-Fep" secondAttribute="top" id="6EB-ge-Bdu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cwo-Ag-SNb" secondAttribute="trailing" id="8oa-1v-VIa"/>
+                                                    <constraint firstItem="cwo-Ag-SNb" firstAttribute="leading" secondItem="CRh-5g-Fep" secondAttribute="leading" id="UmN-Tz-K32"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cwo-Ag-SNb" secondAttribute="bottom" id="kvj-Xb-g3T"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="memeImageView" destination="cwo-Ag-SNb" id="Dv7-7Y-evp"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Td-z9-fNl">
                                         <rect key="frame" x="0.0" y="216" width="280" height="227"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -745,15 +779,19 @@
                                     <constraint firstItem="UhV-SK-tyh" firstAttribute="top" secondItem="4Zv-eB-8V5" secondAttribute="top" constant="8" id="4pF-NH-soW"/>
                                     <constraint firstAttribute="trailing" secondItem="cw5-aD-jjb" secondAttribute="trailing" id="J7s-oA-Me3"/>
                                     <constraint firstItem="UhV-SK-tyh" firstAttribute="leading" secondItem="4Zv-eB-8V5" secondAttribute="leading" constant="8" id="Rb0-8E-CZM"/>
+                                    <constraint firstItem="O3M-RL-pcy" firstAttribute="leading" secondItem="4Zv-eB-8V5" secondAttribute="leading" id="W2m-zJ-77r"/>
+                                    <constraint firstItem="O3M-RL-pcy" firstAttribute="top" secondItem="cw5-aD-jjb" secondAttribute="bottom" id="WcI-1S-V8a"/>
                                     <constraint firstItem="9Td-z9-fNl" firstAttribute="top" secondItem="cw5-aD-jjb" secondAttribute="bottom" id="XYu-Mm-8lQ"/>
                                     <constraint firstAttribute="trailing" secondItem="9Td-z9-fNl" secondAttribute="trailing" id="bBE-CL-zZD"/>
                                     <constraint firstAttribute="trailing" secondItem="uzb-aR-OmA" secondAttribute="trailing" constant="8" id="cpn-6M-h2H"/>
                                     <constraint firstItem="cw5-aD-jjb" firstAttribute="leading" secondItem="4Zv-eB-8V5" secondAttribute="leading" id="e68-A0-je0"/>
                                     <constraint firstItem="uzb-aR-OmA" firstAttribute="top" secondItem="4Zv-eB-8V5" secondAttribute="top" constant="8" id="efF-tg-gHZ"/>
                                     <constraint firstItem="9Td-z9-fNl" firstAttribute="leading" secondItem="4Zv-eB-8V5" secondAttribute="leading" id="gpw-rv-pqc"/>
+                                    <constraint firstAttribute="trailing" secondItem="O3M-RL-pcy" secondAttribute="trailing" id="lZ0-T8-648"/>
                                     <constraint firstAttribute="bottom" secondItem="9Td-z9-fNl" secondAttribute="bottom" id="m3o-aF-CEj"/>
                                     <constraint firstItem="UhV-SK-tyh" firstAttribute="leading" secondItem="4Zv-eB-8V5" secondAttribute="leading" constant="8" id="n7e-h3-PJx"/>
                                     <constraint firstItem="UhV-SK-tyh" firstAttribute="top" secondItem="4Zv-eB-8V5" secondAttribute="top" constant="8" id="omh-ld-gGl"/>
+                                    <constraint firstAttribute="bottom" secondItem="O3M-RL-pcy" secondAttribute="bottom" id="uUK-0a-fyI"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPt-qw-NOe" userLabel="Add Post Button">
@@ -790,6 +828,8 @@
                     </view>
                     <connections>
                         <outlet property="addPostToolbar" destination="cw5-aD-jjb" id="vg1-KQ-jnK"/>
+                        <outlet property="collectionViewFlowLayout" destination="0mb-24-FDa" id="BG1-js-qQl"/>
+                        <outlet property="memeCollectionView" destination="O3M-RL-pcy" id="lRf-pX-vkL"/>
                         <outlet property="memeTableView" destination="9Td-z9-fNl" id="r7E-Fn-13g"/>
                         <segue destination="tS7-ro-niQ" kind="show" identifier="addNewMeme" id="qYA-lg-syg"/>
                     </connections>
@@ -894,6 +934,7 @@
                     <connections>
                         <outlet property="bottomMemeTextField" destination="AcQ-mF-43G" id="cfx-tw-Dt8"/>
                         <outlet property="cameraButton" destination="rtA-L1-7yS" id="Adx-Vu-v8r"/>
+                        <outlet property="editorOptionToolbar" destination="YSs-jO-Gdl" id="iEV-JU-A6l"/>
                         <outlet property="imagePickedByUserView" destination="NGk-89-IGT" id="pt7-S8-xPS"/>
                         <outlet property="topMemeTextField" destination="GLL-la-AOm" id="ha3-WQ-SQr"/>
                     </connections>

@@ -22,8 +22,6 @@ class MainMemesDisplayViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let request: NSFetchRequest<Meme> = Meme.fetchRequest()
     }
     
     func setNavigationBarUI() {

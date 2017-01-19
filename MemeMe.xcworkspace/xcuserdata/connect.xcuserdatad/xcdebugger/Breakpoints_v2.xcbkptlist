@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MainMemesDisplayViewController.swift"
-            timestampString = "506424247.451285"
+            timestampString = "506493010.982169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "newPostButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemeEditorViewController.swift"
-            timestampString = "506465130.246812"
+            timestampString = "506506840.826325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "setNavigationBarUI()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController.swift"
-            timestampString = "506461976.944223"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506462078.458548"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -86,11 +86,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506462079.966632"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506462081.216509"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506462082.802316"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506462328.674363"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506465618.249999"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506465621.369923"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -186,13 +186,138 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/PopupNewPostViewController_ext.swift"
-            timestampString = "506465737.635596"
+            timestampString = "506505254.029084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "controller(_:didChange:at:for:newIndexPath:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe/PopupNewPostViewController.swift"
+            timestampString = "506505254.029084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "setCollectionViewUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe/PopupNewPostViewController_ext.swift"
+            timestampString = "506505254.029084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "establishMemeCell(cell:indexPath:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemeMe/PopupNewPostViewController.swift"
+            timestampString = "506503463.190432"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "PopupNewPostViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMe.PopupNewPostViewController.__deallocating_deinit"
+                  moduleName = "MemeMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connect/Desktop/hpark/MemeMe/MemeMe/MemeMe/PopupNewPostViewController.swift"
+                  timestampString = "506504889.150239"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMe.PopupNewPostViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MemeMe.PopupNewPostViewController"
+                  moduleName = "MemeMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connect/Desktop/hpark/MemeMe/MemeMe/MemeMe/PopupNewPostViewController.swift"
+                  timestampString = "506504889.153333"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMe.PopupNewPostViewController.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MemeMe.PopupNewPostViewController"
+                  moduleName = "MemeMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connect/Desktop/hpark/MemeMe/MemeMe/MemeMe/PopupNewPostViewController.swift"
+                  timestampString = "506504889.156445"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMe.PopupNewPostViewController.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MemeMe.PopupNewPostViewController&gt;"
+                  moduleName = "MemeMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connect/Desktop/hpark/MemeMe/MemeMe/MemeMe/PopupNewPostViewController.swift"
+                  timestampString = "506504889.15951"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemeMe.PopupNewPostViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MemeMe.PopupNewPostViewController&gt;"
+                  moduleName = "MemeMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/connect/Desktop/hpark/MemeMe/MemeMe/MemeMe/PopupNewPostViewController.swift"
+                  timestampString = "506504889.162596"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -87,3 +87,34 @@ extension PopupNewPostViewController: NSFetchedResultsControllerDelegate {
         }
     }
 }
+
+extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let sections = memeController.sections else {
+            return 0
+        }
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = memeCollectionView.dequeueReusableCell(withReuseIdentifier: KEY_MEME_COLLECTION_CELL, for: indexPath) as! MemeCollectionViewCell
+        let meme = self.memeController.object(at: indexPath)
+        cell.establishMemeCell(meme: meme)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let objects = memeController.fetchedObjects, objects.count > 0 {
+            let meme = objects[indexPath.row]
+        }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        guard let sections = memeController.sections else {
+            return 0
+        }
+        return sections.count
+    }
+}

@@ -15,6 +15,7 @@ class MemeEditorViewController: UIViewController {
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var topMemeTextField: CustomMemeTextField!
     @IBOutlet weak var bottomMemeTextField: CustomMemeTextField!
+    @IBOutlet weak var editorOptionToolbar: UIToolbar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class MemeEditorViewController: UIViewController {
         
         setTextFieldAttribute(key: KEY_TEXT_FIELD_TOP)
         setTextFieldAttribute(key: KEY_TEXT_FIELD_BOTTOM)
+        
+        activityButton?.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +68,23 @@ class MemeEditorViewController: UIViewController {
         }
     }
     
+    func setNavbarAndToolbarVisibility(_ visible:Bool) {
+        self.navigationController?.navigationBar.isHidden = !visible
+        self.editorOptionToolbar.isHidden = !visible
+    }
+    
+    func createMemedImage() -> UIImage {
+        setNavbarAndToolbarVisibility(false)
+        
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        setNavbarAndToolbarVisibility(true)
+        return memedImage
+    }
+    
     // get keyboard height and shift the view from bottom to higher
     func keyboardWillShow(_ notification: Notification) {
         if bottomMemeTextField.isFirstResponder {
@@ -94,9 +114,37 @@ class MemeEditorViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    func saveMemedInfo(_ memedImage: UIImage) {
+        var meme: Meme!
+        meme = Meme(context: context)
+        
+        if let textTop = topMemeTextField.text {
+            meme.textTop = textTop
+        }
+        
+        if let textBottom = bottomMemeTextField.text {
+            meme.textBottom = textBottom
+        }
+        
+        meme.memeImage = memedImage
+        meme.created = NSDate()
+        
+        appDelegate.saveContext()
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
     func activityButtonTapped() {
-        print("activityButton Tapped")
+        let memedImage = createMemedImage()
+        let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        
+        activity.completionWithItemsHandler = {(activityType: UIActivityType?, completed:Bool, returnedItems:[Any]?, error: Error?) in
+            if completed {
+                self.saveMemedInfo(memedImage)
+                activity.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+        present(activity, animated: true, completion: nil)
     }
     
     @IBAction func albumButtonTapped(_ sender: Any) {
@@ -109,24 +157,7 @@ class MemeEditorViewController: UIViewController {
     
     // save meme into CoreData
     @IBAction func saveMemeButtonTapped(_ sender: Any) {
-        var meme: Meme!
-        meme = Meme(context: context)
-        
-        if let textTop = topMemeTextField.text {
-            meme.textTop = textTop
-        }
-        
-        if let textBottom = bottomMemeTextField.text {
-            meme.textBottom = textBottom
-        }
-        
-        if let image = imagePickedByUserView.image {
-            meme.memeImage = image
-        }
-        
-        meme.created = NSDate()
-        
-        appDelegate.saveContext()
-        _ = self.navigationController?.popViewController(animated: true)
+        let memedImage = createMemedImage()
+        saveMemedInfo(memedImage)
     }
 }

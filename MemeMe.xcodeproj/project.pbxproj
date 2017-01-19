@@ -26,6 +26,7 @@
 		F1327FBC1E2FC72C00322491 /* CustomMemeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */; };
 		F1327FBE1E2FEF9F00322491 /* PopupNewPostViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FBD1E2FEF9F00322491 /* PopupNewPostViewController_ext.swift */; };
 		F1327FC01E2FF4E200322491 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FBF1E2FF4E200322491 /* MemeTableViewCell.swift */; };
+		F1327FC21E301A2500322491 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FC11E301A2500322491 /* MemeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMemeTextField.swift; sourceTree = "<group>"; };
 		F1327FBD1E2FEF9F00322491 /* PopupNewPostViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupNewPostViewController_ext.swift; sourceTree = "<group>"; };
 		F1327FBF1E2FF4E200322491 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
+		F1327FC11E301A2500322491 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				F1327F971E2BD06000322491 /* LaunchScreen.storyboard */,
 				F1327FBB1E2FC72C00322491 /* CustomMemeTextField.swift */,
 				F1327FBF1E2FF4E200322491 /* MemeTableViewCell.swift */,
+				F1327FC11E301A2500322491 /* MemeCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */,
 				F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */,
 				F1327FB21E2E79E300322491 /* Constants.swift in Sources */,
+				F1327FC21E301A2500322491 /* MemeCollectionViewCell.swift in Sources */,
 				F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */,
 				F1327FC01E2FF4E200322491 /* MemeTableViewCell.swift in Sources */,
 				F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */,
