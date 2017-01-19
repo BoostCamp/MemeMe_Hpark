@@ -10,17 +10,22 @@ import UIKit
 
 class CustomUserProfileImageView: UIImageView {
 
-    
-    
 //     Only override draw() if you perform custom drawing.
 //     An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
-        self.layer.masksToBounds = false
-        self.layer.cornerRadius = 3.0
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowRadius = 3.0
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        self.layer.shadowColor = UIColor(red: 157/255, green: 157/255, blue: 157/255, alpha: 1.0).cgColor
+    }
+    
+    func setBasicUserProfileImageUI() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.width / 2
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 10.0
+        self.layer.shadowOffset = CGSize(width: 0.1, height: 4.0)
+        self.layer.shadowOpacity = 1.0
+        
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.white.cgColor
     }
 
 }

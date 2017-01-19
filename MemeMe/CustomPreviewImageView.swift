@@ -17,5 +17,17 @@ class CustomPreviewImageView: UIImageView {
         // Drawing code
     }
  
+    func setBasicPreviewImageUI() {
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 10.0
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowRadius = 10.0
+        self.layer.shadowOffset = CGSize(width: 0.1, height: 4.0)
+        self.layer.shadowOpacity = 1.0
+        
+        self.layer.borderWidth = 1.4
+        self.layer.borderColor = UIColor.white.cgColor
+    }
 
 }

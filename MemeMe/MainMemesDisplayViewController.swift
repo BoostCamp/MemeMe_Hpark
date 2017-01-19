@@ -51,7 +51,7 @@ class MainMemesDisplayViewController: UIViewController {
     @IBAction func newPostButtonTapped(_ sender: Any) {
         let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController
         self.addChildViewController(popOverNewPostViewController)
-        popOverNewPostViewController.view.frame = CGRect(x: 0, y: -50, width: view.frame.size.width, height: view.frame.size.height + 50)
+        popOverNewPostViewController.view.frame = CGRect(x: 0, y: -26, width: view.frame.size.width, height: view.frame.size.height + 26)
         self.view.addSubview(popOverNewPostViewController.view)
         popOverNewPostViewController.didMove(toParentViewController: self)
     }

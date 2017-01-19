@@ -18,28 +18,12 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = memeTableView.dequeueReusableCell(withIdentifier: KEY_MEME_TABLE_CELL, for: indexPath) as! MemeTableViewCell
         establishMemeCell(cell: cell, indexPath: indexPath)
+        
         return UITableViewCell()
     }
     
     // when selected particular cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MEME_TABLE_CELL, for: indexPath) as! MemeTableViewCell
-        
-        cell.contentView.layer.borderColor = UIColor.red.cgColor
-        cell.contentView.layer.borderWidth = 2.0
-//        if let index = self.preTableIndexPath {
-//            let preSelectedCell = tableView.cellForRow(at: index)
-//            preSelectedCell?.contentView.layer.borderColor = UIColor.white.cgColor
-//        }
-//    
-//        let newlySelectedCell = tableView.cellForRow(at: indexPath)
-//        
-//        newlySelectedCell?.layer.borderWidth = 1.8
-//        newlySelectedCell?.contentView.layer.borderColor = UIColor.red.cgColor
-//        self.preTableIndexPath = indexPath
-        cell.isSelected = true
-        //self.previewImage.image = newlySelectedCell.memeImageView.image
-        
         if let objs = memeController.fetchedObjects , objs.count > 0 {
             
             let meme = objs[indexPath.row]

@@ -30,6 +30,7 @@ class PopupNewPostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPopViewUI()
         setCollectionViewUI()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
@@ -43,8 +44,11 @@ class PopupNewPostViewController: UIViewController {
         
         memeCollectionView.isHidden = true
         tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
+        
+        userImage.setBasicUserProfileImageUI()
+        previewImage.setBasicPreviewImageUI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -71,7 +75,7 @@ class PopupNewPostViewController: UIViewController {
     }
     
     func setPopViewUI() {
-        
+        self.popupView.layer.cornerRadius = 20.0
     }
     
     func setCollectionViewUI() {
