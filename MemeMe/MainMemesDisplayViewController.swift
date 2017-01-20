@@ -13,6 +13,8 @@ import CoreData
 
 class MainMemesDisplayViewController: UIViewController {
     
+    var memePosts = [MemePost]()
+    
     @IBOutlet weak var newPostButton: UIButton!
     @IBOutlet weak var memesDisplayTableView: UITableView!
     
@@ -23,8 +25,19 @@ class MainMemesDisplayViewController: UIViewController {
         self.memesDisplayTableView.delegate = self
         self.memesDisplayTableView.dataSource = self
         
+        // get list of memePost
         DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
-            print(snapshot.value as Any)
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for one in snapshot {
+                    print("[VAL]: \(one)")
+                    if let postDict = one.value as? Dictionary<String, AnyObject> {
+                        let key = one.key
+                        let memePost = MemePost(keyPost: key, dataPost: postDict)
+                        self.memePosts.append(memePost)
+                    }
+                }
+            }
+            self.memesDisplayTableView.reloadData()
         })
     }
     

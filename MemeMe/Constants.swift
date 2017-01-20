@@ -21,3 +21,5 @@ let KEY_SORT_DATA_BY_DATE = "created"
 let KEY_MEME_TABLE_CELL = "MemeTableViewCell"
 let KEY_MEME_COLLECTION_CELL = "MemeCollectionViewCell"
 let KEY_MAIN_TABLE_CELL = "MainPageTableViewCell"
+
+// 

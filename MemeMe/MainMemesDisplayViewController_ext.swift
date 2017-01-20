@@ -15,10 +15,12 @@ extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return memePosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let memePost = self.memePosts[indexPath.row]
+        print("[HPARK]: \(memePost.caption)")
         return tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as! MainPageTableViewCell
     }
 }
