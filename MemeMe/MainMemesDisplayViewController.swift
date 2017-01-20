@@ -22,6 +22,10 @@ class MainMemesDisplayViewController: UIViewController {
         
         self.memesDisplayTableView.delegate = self
         self.memesDisplayTableView.dataSource = self
+        
+        DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value as Any)
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {

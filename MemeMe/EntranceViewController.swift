@@ -56,7 +56,7 @@ class EntranceViewController: UIViewController {
                 print(":::[HPARK] Successfully authenticated with Firebase :::\n")
                 if let user = user {
                     let dataUser = ["provider": credential.provider]
-                    DataService.dataService.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
+                    DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
                     KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
                 }
                 self.performSegue(withIdentifier: "wayToMemesDisplay", sender: nil)

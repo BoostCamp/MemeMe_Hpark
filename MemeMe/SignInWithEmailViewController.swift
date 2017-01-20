@@ -49,7 +49,7 @@ class SignInWithEmailViewController: UIViewController {
                     print(":::[HPARK] Successfully signed in the app with email :::\n")
                     if let user = user {
                         let dataUser = ["provider": user.providerID]
-                        DataService.dataService.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
+                        DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
                         KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
                     }
                     self.performSegue(withIdentifier: "wayToMemesDisplayByEmail", sender: nil)
