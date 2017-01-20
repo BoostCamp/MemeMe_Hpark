@@ -25,7 +25,7 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
             imagePickedByUserView.contentMode = .scaleAspectFit
             activityButton?.isEnabled = true
         }
-        self.dismiss(animated: true, completion: nil)
+        picker.dismiss(animated: true, completion: nil)
     }
     
     // cancel button tapped

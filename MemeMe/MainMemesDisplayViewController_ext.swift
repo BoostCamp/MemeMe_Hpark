@@ -22,8 +22,13 @@ extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSo
         let memePost = memePosts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as? MainPageTableViewCell {
-            cell.establishCell(memePost: memePost)
-            return cell
+            if let image = MainMemesDisplayViewController.imageCache.object(forKey: memePost.imageUrl as NSString) {
+                cell.establishCell(memePost: memePost, image: image)
+                return cell
+            } else {
+                cell.establishCell(memePost: memePost, image: nil)
+                return cell
+            }
         } else {
             return MainPageTableViewCell()
         }

@@ -11,12 +11,15 @@ import SwiftKeychainWrapper
 import Firebase
 import CoreData
 
+
 class MainMemesDisplayViewController: UIViewController {
     
     var memePosts = [MemePost]()
     
     @IBOutlet weak var newPostButton: UIButton!
     @IBOutlet weak var memesDisplayTableView: UITableView!
+    
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -22,4 +22,7 @@ let KEY_MEME_TABLE_CELL = "MemeTableViewCell"
 let KEY_MEME_COLLECTION_CELL = "MemeCollectionViewCell"
 let KEY_MAIN_TABLE_CELL = "MainPageTableViewCell"
 
-// 
+// Firebase references identifier
+let KEY_DATABASE_POSTS = "posts"
+let KEY_DATABASE_USERS = "users"
+let KEY_STORAGE_POST_IMAGES = "post-images"

@@ -37,7 +37,7 @@ class MemePost {
     
     init(caption: String, imageUrl:String, likes: Int, comments: Array< Dictionary< String, String> >) {
         self._caption = caption
-        self._imageUrl = caption
+        self._imageUrl = imageUrl
         self._likes = likes
         self._comments = comments
     }
