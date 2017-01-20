@@ -19,8 +19,13 @@ extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let memePost = self.memePosts[indexPath.row]
-        print("[HPARK]: \(memePost.caption)")
-        return tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as! MainPageTableViewCell
+        let memePost = memePosts[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as? MainPageTableViewCell {
+            cell.establishCell(memePost: memePost)
+            return cell
+        } else {
+            return MainPageTableViewCell()
+        }
     }
 }

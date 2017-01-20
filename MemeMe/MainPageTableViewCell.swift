@@ -10,6 +10,8 @@ import UIKit
 
 class MainPageTableViewCell: UITableViewCell {
 
+    var memePost: MemePost!
+    
     @IBOutlet weak var userProfileImageView: CustomUserProfileImageView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -27,4 +29,8 @@ class MainPageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func establishCell(memePost: MemePost) {
+        self.memePost = memePost
+        self.numberLikesLabel.text = "\(memePost.likes)"
+    }
 }

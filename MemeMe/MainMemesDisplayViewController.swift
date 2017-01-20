@@ -25,7 +25,7 @@ class MainMemesDisplayViewController: UIViewController {
         self.memesDisplayTableView.delegate = self
         self.memesDisplayTableView.dataSource = self
         
-        // get list of memePost
+        // get list of memePost from Firebase
         DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for one in snapshot {
