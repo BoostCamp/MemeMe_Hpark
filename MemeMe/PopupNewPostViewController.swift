@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class PopupNewPostViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class PopupNewPostViewController: UIViewController {
     var preTableIndexPath: IndexPath?
     var preCollectionIndexPath: IndexPath?
     var memeController: NSFetchedResultsController<Meme>!
+    var isImageSelected: Bool = false
     
     @IBOutlet weak var addPostToolbar: UIToolbar!
     @IBOutlet weak var memeTableView: UITableView!
@@ -23,10 +25,8 @@ class PopupNewPostViewController: UIViewController {
     @IBOutlet weak var textLengthLabel: UILabel!
     @IBOutlet weak var memeIntroTextField: UITextField!
     @IBOutlet weak var popupView: UIView!
-    
     @IBOutlet weak var collectionButton: UIButton!
     @IBOutlet weak var tableButton: UIButton!
-    
     @IBOutlet weak var previewImage: CustomPreviewImageView!
     @IBOutlet weak var userImage: CustomUserProfileImageView!
     
@@ -120,6 +120,52 @@ class PopupNewPostViewController: UIViewController {
             memeTableView.reloadData()
             memeCollectionView.reloadData()
         }
+    }
+    
+    @IBAction func addMemePostButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "포스팅 경고", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default) { action in })
+        
+        guard let caption = memeIntroTextField.text, caption != "" else {
+            alert.message = "메세지를 작성해주세요 ^^"
+            self.present(alert, animated: true)
+            return
+        }
+        guard let image = previewImage.image, isImageSelected == true else {
+            alert.message = "사진을 선택해주세요 ^^"
+            self.present(alert, animated: true)
+            return
+        }
+        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+            let imageUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            DataService.instance.REF_ST_POST_IMAGES.child(imageUid).put(imageData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print(":::[HPARK] Unable to upload image to storage \(error):::\n ")
+                } else {
+                    if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                        self.memePostToFirebase(imageUrl: downloadURL)
+                        self.view.removeFromSuperview()
+                    }
+                }
+            }
+        }
+    }
+    
+    func memePostToFirebase(imageUrl: String) {
+        let commentsPlaceholder: Array<Dictionary<String, String>> = []
+        let memePost: Dictionary<String, AnyObject> = [
+            KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
+            KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
+            KEY_DIC_POST_LIKES: 0 as AnyObject,
+            KEY_DIC_POST_COMMENTS: commentsPlaceholder as AnyObject
+        ]
+        
+        let firebasePost = DataService.instance.REF_POSTS.childByAutoId()
+        firebasePost.setValue(memePost)
+        
+        self.isImageSelected = false
     }
     
 }

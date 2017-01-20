@@ -44,19 +44,19 @@ class MemePost {
     
     init(keyPost: String, dataPost: Dictionary<String, AnyObject>) {
         self._keyPost = keyPost
-        if let caption = dataPost["caption"] as? String {
+        if let caption = dataPost[KEY_DIC_POST_CAPTION] as? String {
             self._caption = caption
         }
         
-        if let imageUrl = dataPost["imageUrl"] as? String {
+        if let imageUrl = dataPost[KEY_DIC_POST_IMAGE_URL] as? String {
             self._imageUrl = imageUrl
         }
         
-        if let likes = dataPost["likes"] as? Int {
+        if let likes = dataPost[KEY_DIC_POST_LIKES] as? Int {
             self._likes = likes
         }
         
-        if let comments = dataPost["comments"] as? Array< Dictionary< String, String> > {
+        if let comments = dataPost[KEY_DIC_POST_COMMENTS] as? Array< Dictionary< String, String> > {
             self._comments = comments
         }
     }

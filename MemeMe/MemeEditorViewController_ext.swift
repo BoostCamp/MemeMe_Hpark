@@ -15,14 +15,16 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
+        imagePickerController.allowsEditing = true
         present(imagePickerController, animated: true, completion: nil)
     }
     
     // after finished picking image
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             imagePickedByUserView.image = image
-            imagePickedByUserView.contentMode = .scaleAspectFit
+            imagePickedByUserView.contentMode = .scaleAspectFill
             activityButton?.isEnabled = true
         }
         picker.dismiss(animated: true, completion: nil)
