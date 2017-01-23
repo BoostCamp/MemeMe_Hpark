@@ -196,102 +196,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMe/UserProfileViewController.swift"
-            timestampString = "506898589.456337"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.UserProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "MemeMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController.swift"
-                  timestampString = "506899241.341075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1192">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.UserProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "MemeMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController.swift"
-                  timestampString = "506899241.343574"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "1512">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MemeMe/UserProfileViewController.swift"
-            timestampString = "506898654.356652"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.UserProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "MemeMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController.swift"
-                  timestampString = "506899008.255762"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MemeMe.UserProfileViewController.(viewDidLoad () -&gt; ()).(closure #1)"
-                  moduleName = "MemeMe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController.swift"
-                  timestampString = "506899008.258241"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "476">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -308,7 +212,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/SignInWithEmailViewController.swift"
@@ -321,7 +225,7 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemeMe.SignInWithEmailViewController.(loginButtonTapped (Any) -&gt; ()).(closure #2)"
@@ -336,7 +240,7 @@
                   offsetFromSymbolStart = "312">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemeMe.SignInWithEmailViewController.(loginButtonTapped (Any) -&gt; ()).(closure #2)"
@@ -376,7 +280,7 @@
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/EntranceViewController.swift"
-                  timestampString = "506899241.357392"
+                  timestampString = "506904610.370862"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -391,7 +295,7 @@
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/EntranceViewController.swift"
-                  timestampString = "506899241.359641"
+                  timestampString = "506904610.373313"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -424,7 +328,7 @@
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController_ext.swift"
-                  timestampString = "506899241.363713"
+                  timestampString = "506904610.37821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -439,7 +343,7 @@
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/UserProfileViewController_ext.swift"
-                  timestampString = "506899241.36568"
+                  timestampString = "506904610.380505"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"

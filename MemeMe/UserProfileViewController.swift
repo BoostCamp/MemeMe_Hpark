@@ -18,18 +18,7 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // get list of memePost from Firebase
-        DataService.instance.REF_USER_CURRENT?.observe(.value, with: { (snapshot) in
-            if let value = snapshot.value as? Dictionary<String, AnyObject> {
-                if let username = value["username"] as? String {
-                    self.userNameField.text = username
-                }
-                if let email = value["email"] as? String {
-                    self.emailLabel.text = "Email : \(email)"
-                }
-            }
-        })
-        
+        observeFirebaseValue()
         userNameField.delegate = self
     }
 
@@ -40,6 +29,7 @@ class UserProfileViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        setUserProfileImageToFirebaseStorage()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -47,8 +37,26 @@ class UserProfileViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
     
+    func observeFirebaseValue() {
+        // get list of memePost from Firebase
+        DataService.instance.REF_USER_CURRENT?.observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? Dictionary<String, AnyObject> {
+                if let username = value["username"] as? String {
+                    self.userNameField.text = username
+                }
+                if let email = value["email"] as? String {
+                    self.emailLabel.text = "Email : \(email)"
+                }
+        
+                if let imageUrl = value["imageUrl"] as? String, let image = UIImage(named: imageUrl) {
+                    self.userImage.image = image
+                }
+            }
+        })
+    }
+    
     func setUserProfileImageToFirebaseStorage() {
-        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+        if let image = userImage.image, let imageData = UIImageJPEGRepresentation(image, 0.2) {
             let imageUid = NSUUID().uuidString
             let metadata = FIRStorageMetadata()
             metadata.contentType = "image/jpeg"
@@ -65,7 +73,9 @@ class UserProfileViewController: UIViewController {
     }
     
     func saveUserProfileImageUrl (imageUrl: String) {
-        
+        if let currentUserRef = DataService.instance.REF_USER_CURRENT {
+            currentUserRef.updateChildValues(["imageUrl": imageUrl])
+        }
     }
     
     @IBAction func userImageTapped(_ sender: UITapGestureRecognizer) {
