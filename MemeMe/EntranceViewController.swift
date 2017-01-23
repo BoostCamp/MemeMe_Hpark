@@ -54,8 +54,8 @@ class EntranceViewController: UIViewController {
                 print(":::[HPARK] Unable to authenticate with Firebase - \(error) :::\n")
             } else {
                 print(":::[HPARK] Successfully authenticated with Firebase :::\n")
-                if let user = user {
-                    let dataUser = ["provider": credential.provider]
+                if let user = user, let email = user.email {
+                    let dataUser = ["provider": credential.provider, "email": email]
                     DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
                     KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
                 }

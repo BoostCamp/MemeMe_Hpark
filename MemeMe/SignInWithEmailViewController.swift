@@ -47,8 +47,8 @@ class SignInWithEmailViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print(":::[HPARK] Successfully signed in the app with email :::\n")
-                    if let user = user {
-                        let dataUser = ["provider": user.providerID]
+                    if let user = user, let email = user.email {
+                        let dataUser = ["provider": user.providerID, "email": email]
                         DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
                         KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
                     }

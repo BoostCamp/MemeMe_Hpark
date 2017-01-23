@@ -80,4 +80,8 @@ class MainMemesDisplayViewController: UIViewController {
         self.view.addSubview(popOverNewPostViewController.view)
         popOverNewPostViewController.didMove(toParentViewController: self)
     }
+    
+    @IBAction func settingsButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "openUserProfile", sender: nil)
+    }
 }
