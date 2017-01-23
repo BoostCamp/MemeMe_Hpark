@@ -154,12 +154,10 @@ class PopupNewPostViewController: UIViewController {
     }
     
     func memePostToFirebase(imageUrl: String) {
-        let commentsPlaceholder: Array<Dictionary<String, String>> = []
         let memePost: Dictionary<String, AnyObject> = [
             KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
             KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
             KEY_DIC_POST_LIKES: 0 as AnyObject,
-            KEY_DIC_POST_COMMENTS: commentsPlaceholder as AnyObject
         ]
         
         let firebasePost = DataService.instance.REF_POSTS.childByAutoId()

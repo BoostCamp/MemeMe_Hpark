@@ -12,12 +12,14 @@ import Firebase
 class MainPageTableViewCell: UITableViewCell {
 
     var memePost: MemePost!
+    var likesReference: FIRDatabaseReference?
     
     @IBOutlet weak var userProfileImageView: CustomUserProfileImageView!
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var numberLikesLabel: UILabel!
+    @IBOutlet weak var likesButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,13 +28,13 @@ class MainPageTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 
     func establishCell(memePost: MemePost, image: UIImage? = nil) {
         self.memePost = memePost
-        self.numberLikesLabel.text = "\(memePost.likes)"
+        self.numberLikesLabel.text = "\(memePost.likes) of people likes this Meme"
+        likesReference = DataService.instance.REF_USER_CURRENT?.child("likes").child(memePost.keyPost)
         if let image = image{
             self.mainImageView.image = image
         } else {
@@ -47,6 +49,34 @@ class MainPageTableViewCell: UITableViewCell {
                             MainMemesDisplayViewController.imageCache.setObject(image, forKey: memePost.imageUrl as NSString)
                         }
                     }
+                }
+            })
+        }
+        
+        if let likesRef = likesReference {
+            likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                // something got from Firebase is JSON stuff, so it cannot be nil
+                // so I need to check whether snapshot value is NSNull(null) or not
+                if let _ = snapshot.value as? NSNull { // if the value is null
+                    self.likesButton.setImage(UIImage(named: "Likes"), for: .normal)
+                } else {
+                    self.likesButton.setImage(UIImage(named: "Likes Tapped"), for: .normal)
+                }
+            })
+        }
+    }
+    
+    @IBAction func likesButtonTapped(_ sender: UIButton) {
+        if let likesRef = likesReference {
+            likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                if let _ = snapshot.value as? NSNull { // if the value is null
+                    self.likesButton.setImage(UIImage(named: "Likes Tapped"), for: .normal)
+                    self.memePost.changeLikesNumber(addLike: true)
+                    likesRef.setValue(true)
+                } else {
+                    self.likesButton.setImage(UIImage(named: "Likes"), for: .normal)
+                    self.memePost.changeLikesNumber(addLike: false)
+                    likesRef.removeValue()
                 }
             })
         }

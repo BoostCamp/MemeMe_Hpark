@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import Firebase
 
 class MemePost {
     private var _caption: String!
     private var _imageUrl: String!
     private var _likes: Int!
     private var _keyPost: String!
-    private var _comments: Array< Dictionary< String, String> >!
+    private var _postRef: FIRDatabaseReference!
     
     var caption: String {
         return _caption
@@ -31,15 +32,10 @@ class MemePost {
         return _keyPost
     }
     
-    var comments: Array< Dictionary< String, String> > {
-        return _comments
-    }
-    
     init(caption: String, imageUrl:String, likes: Int, comments: Array< Dictionary< String, String> >) {
         self._caption = caption
         self._imageUrl = imageUrl
         self._likes = likes
-        self._comments = comments
     }
     
     init(keyPost: String, dataPost: Dictionary<String, AnyObject>) {
@@ -56,8 +52,16 @@ class MemePost {
             self._likes = likes
         }
         
-        if let comments = dataPost[KEY_DIC_POST_COMMENTS] as? Array< Dictionary< String, String> > {
-            self._comments = comments
+        _postRef = DataService.instance.REF_POSTS.child(_keyPost)
+    }
+    
+    func changeLikesNumber(addLike: Bool) {
+        if addLike {
+            _likes = _likes + 1
+        } else {
+            _likes = _likes - 1
         }
+        
+        _postRef.child("likes").setValue(_likes)
     }
 }

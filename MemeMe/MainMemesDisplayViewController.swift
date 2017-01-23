@@ -31,6 +31,7 @@ class MainMemesDisplayViewController: UIViewController {
         // get list of memePost from Firebase
         DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                self.memePosts.removeAll()
                 for one in snapshot {
                     print("[VAL]: \(one)")
                     if let postDict = one.value as? Dictionary<String, AnyObject> {
