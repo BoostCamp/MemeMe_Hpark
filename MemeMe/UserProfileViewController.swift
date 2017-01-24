@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class UserProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var userNameField: UITextField!
@@ -18,6 +18,7 @@ class UserProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setNavigationBarUI()
         observeFirebaseValue()
         userNameField.delegate = self
     }
@@ -37,6 +38,17 @@ class UserProfileViewController: UIViewController {
         unsubscribeFromKeyboardNotifications()
     }
     
+    func setNavigationBarUI() {
+        if let topItem = self.navigationController?.navigationBar.topItem {
+            topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem?.tintColor = UIColor.white
+        }
+        
+        let logo = UIImage(named: "Meme Home Logo")
+        let logoImageView = UIImageView(image: logo)
+        self.navigationItem.titleView = logoImageView
+    }
+    
     func observeFirebaseValue() {
         // get list of memePost from Firebase
         DataService.instance.REF_USER_CURRENT?.observe(.value, with: { (snapshot) in
@@ -47,8 +59,8 @@ class UserProfileViewController: UIViewController {
                 if let email = value["email"] as? String {
                     self.emailLabel.text = "Email : \(email)"
                 }
-        
-                if let imageUrl = value["imageUrl"] as? String, let image = UIImage(named: imageUrl) {
+                if let imageUrl = value["imageUrl"] as? String {
+                    let image = MainMemesDisplayViewController.imageCache.object(forKey: imageUrl as NSString)
                     self.userImage.image = image
                 }
             }

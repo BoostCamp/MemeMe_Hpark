@@ -22,12 +22,11 @@ class EntranceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         FIRMessaging.messaging().subscribe(toTopic: "/topics/news")
-        // KeychainWrapper.standard.remove(key: KEY_UID)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: "wayToMemesDisplay", sender: nil)
+            performSegue(withIdentifier: KEY_SEGUE_MEMES_DISPLAY, sender: nil)
         }
     }
     
@@ -59,12 +58,9 @@ class EntranceViewController: UIViewController {
                     DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
                     KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
                 }
-                self.performSegue(withIdentifier: "wayToMemesDisplay", sender: nil)
+                self.performSegue(withIdentifier: KEY_SEGUE_MEMES_DISPLAY, sender: nil)
             }
         })
     }
-
-
-
 }
 

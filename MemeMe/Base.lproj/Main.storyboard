@@ -589,7 +589,7 @@
                                                         </imageView>
                                                         <button opaque="NO" alpha="0.80000000000000004" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkF-4K-DMS">
                                                             <rect key="frame" x="0.0" y="288" width="320" height="32"/>
-                                                            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="32" id="4pn-aO-pAa"/>
                                                             </constraints>
@@ -660,7 +660,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8J3-2S-KjH">
-                        <barButtonItem key="leftBarButtonItem" image="Menu Button" id="TeC-eD-Nlf">
+                        <barButtonItem key="leftBarButtonItem" image="icon logout" id="TeC-eD-Nlf">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="menuBarButtonTapped:" destination="1uk-hN-1wV" id="WUh-dL-asS"/>
@@ -680,7 +680,7 @@
                     <connections>
                         <outlet property="memesDisplayTableView" destination="Df0-IA-Bqi" id="Flw-fP-PPX"/>
                         <outlet property="newPostButton" destination="fRN-6n-JeX" id="hmn-Aj-dvZ"/>
-                        <segue destination="Xo5-pj-L0y" kind="show" identifier="openUserProfile" id="5IK-yd-mX4"/>
+                        <segue destination="Xo5-pj-L0y" kind="show" identifier="wayToUserProfile" id="5IK-yd-mX4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OMo-Ey-mvu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -974,7 +974,7 @@
                         <outlet property="textLengthLabel" destination="JBV-pF-91h" id="5az-cO-KIA"/>
                         <outlet property="userImage" destination="UhV-SK-tyh" id="zMn-jE-c3A"/>
                         <outlet property="userNameLabel" destination="0Mp-yR-dNH" id="yER-Jd-dx3"/>
-                        <segue destination="tS7-ro-niQ" kind="show" identifier="addNewMeme" id="qYA-lg-syg"/>
+                        <segue destination="tS7-ro-niQ" kind="show" identifier="wayToAddNewMeme" id="qYA-lg-syg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Xt-Gs-MLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1116,7 +1116,6 @@
         <image name="Logo" width="294" height="57"/>
         <image name="Logo Shape" width="83" height="83"/>
         <image name="Main Background" width="375" height="667"/>
-        <image name="Menu Button" width="24" height="12"/>
         <image name="New Post Button" width="102" height="102"/>
         <image name="PlaceHolder Image" width="768" height="768"/>
         <image name="Post Button" width="88" height="88"/>
@@ -1130,11 +1129,12 @@
         <image name="icon camera" width="34" height="28"/>
         <image name="icon collection" width="20" height="20"/>
         <image name="icon disk" width="27" height="27"/>
+        <image name="icon logout" width="23" height="30"/>
         <image name="icon table" width="23" height="17"/>
         <image name="icon trash" width="22" height="27"/>
         <image name="share your precious" width="314" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9oW-Gf-Y71"/>
+        <segue reference="yv4-0x-uHC"/>
     </inferredMetricsTieBreakers>
 </document>

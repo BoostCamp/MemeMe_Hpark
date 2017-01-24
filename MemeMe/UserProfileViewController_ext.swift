@@ -23,6 +23,7 @@ extension UserProfileViewController : UITextFieldDelegate {
 }
 
 extension UserProfileViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     // present image picker
     func presentImagePickerController(_ source: UIImagePickerControllerSourceType) {
         let imagePickerController = UIImagePickerController()

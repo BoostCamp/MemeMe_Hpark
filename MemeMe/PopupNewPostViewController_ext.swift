@@ -160,7 +160,6 @@ extension PopupNewPostViewController: UITextFieldDelegate {
         
         // Write the length of newText into the label
         self.textLengthLabel.text = "\(String(newText.length)) / 80 자"
-        
         return true;
     }
     

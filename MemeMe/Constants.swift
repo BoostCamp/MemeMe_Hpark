@@ -22,6 +22,12 @@ let KEY_MEME_TABLE_CELL = "MemeTableViewCell"
 let KEY_MEME_COLLECTION_CELL = "MemeCollectionViewCell"
 let KEY_MAIN_TABLE_CELL = "MainPageTableViewCell"
 
+// key identifier for segueway
+let KEY_SEGUE_MEMES_DISPLAY = "wayToMemesDisplay"
+let KEY_SEGUE_MEMES_DISPLAY_BY_EMAIL = "wayToMemesDisplayByEmail"
+let KEY_SEGUE_USER_PROFILE = "wayToUserProfile"
+let KEY_SEGUE_ADD_MEME = "wayToAddNewMeme"
+
 // Firebase references identifier
 let KEY_DATABASE_POSTS = "posts"
 let KEY_DATABASE_USERS = "users"
@@ -34,4 +40,6 @@ let KEY_DIC_POST_USER = "user"
 let KEY_DIC_POST_LIKES = "likes"
 let KEY_DIC_POST_COMMENTS = "comments"
 let KEY_DIC_POST_DATETIME = "dateTime"
+
+
 

@@ -14,12 +14,12 @@ import CoreData
 
 class MainMemesDisplayViewController: UIViewController {
     
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
+    
     var memePosts = [MemePost]()
     
     @IBOutlet weak var newPostButton: UIButton!
     @IBOutlet weak var memesDisplayTableView: UITableView!
-    
-    static var imageCache: NSCache<NSString, UIImage> = NSCache()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,19 @@ class MainMemesDisplayViewController: UIViewController {
         self.memesDisplayTableView.delegate = self
         self.memesDisplayTableView.dataSource = self
         
-        // get list of memePost from Firebase
+        observeFirebaseValue()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func observeFirebaseValue() {
+        // get list of memePosts from Firebase
         DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 self.memePosts.removeAll()
                 for one in snapshot {
-                    print("[VAL]: \(one)")
                     if let postDict = one.value as? Dictionary<String, AnyObject> {
                         let key = one.key
                         let memePost = MemePost(keyPost: key, dataPost: postDict)
@@ -41,12 +48,9 @@ class MainMemesDisplayViewController: UIViewController {
                     }
                 }
             }
+            self.memePosts.reverse()
             self.memesDisplayTableView.reloadData()
         })
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     func setNavigationBarUI() {
@@ -59,18 +63,22 @@ class MainMemesDisplayViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(red: 28/255, green: 213/255, blue: 241/255, alpha: 1)
         navigationController?.navigationBar.isTranslucent = false
         
-        // nav bar no border
+        // nav bar without border
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     @IBAction func menuBarButtonTapped(_ sender: Any) {
         KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        try! FIRAuth.auth()?.signOut()
+        do {
+            try FIRAuth.auth()?.signOut()
+        } catch {
+            let error = error as NSError
+            print(":::[HPARK] Sign Out Failure \(error) :::\n")
+        }
         dismiss(animated: true, completion: nil)
     }
 
-    
     @IBAction func newPostButtonTapped(_ sender: Any) {
         let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController
         self.addChildViewController(popOverNewPostViewController)
@@ -80,6 +88,6 @@ class MainMemesDisplayViewController: UIViewController {
     }
     
     @IBAction func settingsButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: "openUserProfile", sender: nil)
+        performSegue(withIdentifier: KEY_SEGUE_USER_PROFILE, sender: nil)
     }
 }

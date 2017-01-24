@@ -129,7 +129,7 @@ class PopupNewPostViewController: UIViewController {
     }
     
     @IBAction func addMemeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "addNewMeme", sender: nil)
+        performSegue(withIdentifier: KEY_SEGUE_ADD_MEME, sender: nil)
     }
     
     @IBAction func tableButtonTapped(_ sender: Any) {
@@ -189,7 +189,7 @@ class PopupNewPostViewController: UIViewController {
     func memePostToFirebase(imageUrl: String) {
         if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy년 MM월 dd일"
+            formatter.dateFormat = "yyyy년 MM월 dd일 - HH:mm:ss"
             let postedDate = formatter.string(from: Date())
             
             let memePost: Dictionary<String, AnyObject> = [
