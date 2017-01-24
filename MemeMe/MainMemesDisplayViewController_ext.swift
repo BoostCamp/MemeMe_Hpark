@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -22,15 +23,10 @@ extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSo
         let memePost = memePosts[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as? MainPageTableViewCell {
-            if let image = MainMemesDisplayViewController.imageCache.object(forKey: memePost.imageUrl as NSString) {
-                cell.establishCell(memePost: memePost, image: image)
-                return cell
-            } else {
-                cell.establishCell(memePost: memePost, image: nil)
-                return cell
-            }
-        } else {
-            return MainPageTableViewCell()
+            let memeImage = MainMemesDisplayViewController.imageCache.object(forKey: memePost.imageUrl as NSString)
+            cell.establishCell(memePost: memePost, memeImage: memeImage)
+            return cell
         }
+        return MainPageTableViewCell()
     }
 }

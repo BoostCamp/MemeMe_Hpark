@@ -30,6 +30,7 @@ let KEY_STORAGE_POST_IMAGES = "post-images"
 // Dictionary key - memePost model
 let KEY_DIC_POST_CAPTION = "caption"
 let KEY_DIC_POST_IMAGE_URL = "imageUrl"
+let KEY_DIC_POST_USER = "user"
 let KEY_DIC_POST_LIKES = "likes"
 let KEY_DIC_POST_COMMENTS = "comments"
 

@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import Firebase
+import SwiftKeychainWrapper
 
 class PopupNewPostViewController: UIViewController {
     
@@ -29,11 +30,13 @@ class PopupNewPostViewController: UIViewController {
     @IBOutlet weak var tableButton: UIButton!
     @IBOutlet weak var previewImage: CustomPreviewImageView!
     @IBOutlet weak var userImage: CustomUserProfileImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPopViewUI()
         setCollectionViewUI()
+        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
         self.memeTableView.delegate = self
@@ -45,10 +48,10 @@ class PopupNewPostViewController: UIViewController {
         self.memeIntroTextField.delegate = self
         
         fetchAllMeme()
+        observeFirebaseValue()
         
         memeCollectionView.isHidden = true
         tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
-        previewImage.setBasicPreviewImageUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +60,36 @@ class PopupNewPostViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func observeFirebaseValue() {
+        // get list of memePost from Firebase
+        DataService.instance.REF_USER_CURRENT?.observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? Dictionary<String, AnyObject> {
+                if let username = value["username"] as? String {
+                    self.userNameLabel.text = username
+                }
+                
+                if let imageUrl = value["imageUrl"] as? String {
+                    self.getUserImageFromFirebaseStorage(imageUrl: imageUrl)
+                }
+            }
+        })
+    }
+    
+    func getUserImageFromFirebaseStorage(imageUrl: String) {
+        let ref = FIRStorage.storage().reference(forURL: imageUrl)
+        ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+            if error != nil {
+                print(":::[HPARK] Unable to Download image from Storage \(error):::")
+            } else {
+                if let imageData = data {
+                    if let image = UIImage(data: imageData) {
+                        self.userImage.image = image
+                    }
+                }
+            }
+        })
     }
     
     func fetchAllMeme() {
@@ -154,16 +187,18 @@ class PopupNewPostViewController: UIViewController {
     }
     
     func memePostToFirebase(imageUrl: String) {
-        let memePost: Dictionary<String, AnyObject> = [
-            KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
-            KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
-            KEY_DIC_POST_LIKES: 0 as AnyObject,
-        ]
-        
-        let firebasePost = DataService.instance.REF_POSTS.childByAutoId()
-        firebasePost.setValue(memePost)
-        
-        self.isImageSelected = false
+        if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            let memePost: Dictionary<String, AnyObject> = [
+                KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
+                KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
+                KEY_DIC_POST_LIKES: 0 as AnyObject,
+                KEY_DIC_POST_USER: uid as AnyObject
+            ]
+            
+            let firebasePost = DataService.instance.REF_POSTS.childByAutoId()
+            firebasePost.setValue(memePost)
+            
+            self.isImageSelected = false
+        }
     }
-    
 }
