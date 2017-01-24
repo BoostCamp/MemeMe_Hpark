@@ -25,7 +25,7 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
     // when selected particular cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let objs = memeController.fetchedObjects , objs.count > 0 {
-            
+            self.isImageSelected = true
             let meme = objs[indexPath.row]
             self.previewImage.image = meme.memeImage as! UIImage?
             self.memeToDelete = meme
@@ -131,6 +131,7 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
         self.previewImage.image = newlySelectedCell.memeImageView.image
         
         if let objs = memeController.fetchedObjects, objs.count > 0 {
+            self.isImageSelected = true
             let meme = objs[indexPath.row]
             self.memeToDelete = meme
         }
@@ -159,7 +160,6 @@ extension PopupNewPostViewController: UITextFieldDelegate {
         
         // Write the length of newText into the label
         self.textLengthLabel.text = "\(String(newText.length)) / 80 자"
-        
         return true;
     }
     

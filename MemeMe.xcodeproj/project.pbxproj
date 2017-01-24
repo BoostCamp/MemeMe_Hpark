@@ -10,6 +10,11 @@
 		207ED91ECDC545BF1FBDA912 /* Pods_MemeMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFF526101EFA7F93E4744C /* Pods_MemeMe.framework */; };
 		F11D36B71E3137A9008C3A17 /* MainPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36B61E3137A9008C3A17 /* MainPageTableViewCell.swift */; };
 		F11D36B91E314541008C3A17 /* MainMemesDisplayViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36B81E314541008C3A17 /* MainMemesDisplayViewController_ext.swift */; };
+		F11D36BC1E315369008C3A17 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11D36BB1E315369008C3A17 /* DataService.swift */; };
+		F120919F1E31FE02004CD968 /* MemePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = F120919E1E31FE02004CD968 /* MemePost.swift */; };
+		F1225E4C1E3699ED00060D49 /* UserProfileViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1225E4B1E3699ED00060D49 /* UserProfileViewController_ext.swift */; };
+		F1225E4E1E37887800060D49 /* SignInWithEmailViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1225E4D1E37887800060D49 /* SignInWithEmailViewController_ext.swift */; };
+		F1225E501E378C3700060D49 /* RegisterUserViewController_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1225E4F1E378C3700060D49 /* RegisterUserViewController_ext.swift */; };
 		F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327F8B1E2BD06000322491 /* AppDelegate.swift */; };
 		F1327F8E1E2BD06000322491 /* EntranceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327F8D1E2BD06000322491 /* EntranceViewController.swift */; };
 		F1327F911E2BD06000322491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1327F8F1E2BD06000322491 /* Main.storyboard */; };
@@ -17,7 +22,7 @@
 		F1327F961E2BD06000322491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1327F951E2BD06000322491 /* Assets.xcassets */; };
 		F1327F991E2BD06000322491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1327F971E2BD06000322491 /* LaunchScreen.storyboard */; };
 		F1327FA11E2BD09200322491 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1327FA01E2BD09200322491 /* GoogleService-Info.plist */; };
-		F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAA1E2D28A400322491 /* TestViewController.swift */; };
+		F1327FAB1E2D28A400322491 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAA1E2D28A400322491 /* UserProfileViewController.swift */; };
 		F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */; };
 		F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */; };
 		F1327FB21E2E79E300322491 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1327FB11E2E79E300322491 /* Constants.swift */; };
@@ -39,6 +44,11 @@
 		D6307032B5E21E2E7CF3D4C9 /* Pods-MemeMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemeMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemeMe/Pods-MemeMe.release.xcconfig"; sourceTree = "<group>"; };
 		F11D36B61E3137A9008C3A17 /* MainPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageTableViewCell.swift; sourceTree = "<group>"; };
 		F11D36B81E314541008C3A17 /* MainMemesDisplayViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMemesDisplayViewController_ext.swift; sourceTree = "<group>"; };
+		F11D36BB1E315369008C3A17 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		F120919E1E31FE02004CD968 /* MemePost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemePost.swift; sourceTree = "<group>"; };
+		F1225E4B1E3699ED00060D49 /* UserProfileViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController_ext.swift; sourceTree = "<group>"; };
+		F1225E4D1E37887800060D49 /* SignInWithEmailViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewController_ext.swift; sourceTree = "<group>"; };
+		F1225E4F1E378C3700060D49 /* RegisterUserViewController_ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController_ext.swift; sourceTree = "<group>"; };
 		F1327F881E2BD06000322491 /* MemeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1327F8B1E2BD06000322491 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1327F8D1E2BD06000322491 /* EntranceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +59,7 @@
 		F1327F9A1E2BD06000322491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1327FA01E2BD09200322491 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1327FA71E2D1B2300322491 /* MemeMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MemeMe.entitlements; sourceTree = "<group>"; };
-		F1327FAA1E2D28A400322491 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		F1327FAA1E2D28A400322491 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithEmailViewController.swift; sourceTree = "<group>"; };
 		F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		F1327FB11E2E79E300322491 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -94,6 +104,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F11D36BA1E315359008C3A17 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F11D36BB1E315369008C3A17 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		F1327F7F1E2BD06000322491 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +133,7 @@
 		F1327F8A1E2BD06000322491 /* MemeMe */ = {
 			isa = PBXGroup;
 			children = (
+				F11D36BA1E315359008C3A17 /* Services */,
 				F1327FB01E2E79B700322491 /* Util */,
 				F1327FA71E2D1B2300322491 /* MemeMe.entitlements */,
 				F1327FA61E2BD3F400322491 /* Extension */,
@@ -131,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F1327F921E2BD06000322491 /* MemeMe.xcdatamodeld */,
+				F120919E1E31FE02004CD968 /* MemePost.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -154,8 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				F1327F8D1E2BD06000322491 /* EntranceViewController.swift */,
-				F1327FAA1E2D28A400322491 /* TestViewController.swift */,
 				F1327FAC1E2E0DAF00322491 /* SignInWithEmailViewController.swift */,
+				F1327FAA1E2D28A400322491 /* UserProfileViewController.swift */,
 				F1327FAE1E2E3C3400322491 /* RegisterUserViewController.swift */,
 				F1327FB31E2E7DC500322491 /* MainMemesDisplayViewController.swift */,
 				F1327FB51E2E935000322491 /* PopupNewPostViewController.swift */,
@@ -180,6 +200,9 @@
 				F1327FB91E2F6E5D00322491 /* MemeEditorViewController_ext.swift */,
 				F1327FBD1E2FEF9F00322491 /* PopupNewPostViewController_ext.swift */,
 				F11D36B81E314541008C3A17 /* MainMemesDisplayViewController_ext.swift */,
+				F1225E4B1E3699ED00060D49 /* UserProfileViewController_ext.swift */,
+				F1225E4D1E37887800060D49 /* SignInWithEmailViewController_ext.swift */,
+				F1225E4F1E378C3700060D49 /* RegisterUserViewController_ext.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -333,17 +356,22 @@
 				F1327FBC1E2FC72C00322491 /* CustomMemeTextField.swift in Sources */,
 				F1327F8E1E2BD06000322491 /* EntranceViewController.swift in Sources */,
 				F1327FBE1E2FEF9F00322491 /* PopupNewPostViewController_ext.swift in Sources */,
-				F1327FAB1E2D28A400322491 /* TestViewController.swift in Sources */,
+				F1225E4E1E37887800060D49 /* SignInWithEmailViewController_ext.swift in Sources */,
+				F1327FAB1E2D28A400322491 /* UserProfileViewController.swift in Sources */,
+				F1225E501E378C3700060D49 /* RegisterUserViewController_ext.swift in Sources */,
 				F1327FC41E30D78B00322491 /* CustomUserProfileImageView.swift in Sources */,
 				F1327FAD1E2E0DAF00322491 /* SignInWithEmailViewController.swift in Sources */,
 				F11D36B71E3137A9008C3A17 /* MainPageTableViewCell.swift in Sources */,
 				F1327FB21E2E79E300322491 /* Constants.swift in Sources */,
 				F1327FC21E301A2500322491 /* MemeCollectionViewCell.swift in Sources */,
 				F1327FAF1E2E3C3400322491 /* RegisterUserViewController.swift in Sources */,
+				F1225E4C1E3699ED00060D49 /* UserProfileViewController_ext.swift in Sources */,
+				F120919F1E31FE02004CD968 /* MemePost.swift in Sources */,
 				F1327FC01E2FF4E200322491 /* MemeTableViewCell.swift in Sources */,
 				F1327F8C1E2BD06000322491 /* AppDelegate.swift in Sources */,
 				F1327FB81E2F64AC00322491 /* MemeEditorViewController.swift in Sources */,
 				F11D36B91E314541008C3A17 /* MainMemesDisplayViewController_ext.swift in Sources */,
+				F11D36BC1E315369008C3A17 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

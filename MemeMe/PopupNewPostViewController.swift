@@ -8,6 +8,8 @@
 
 import UIKit
 import CoreData
+import Firebase
+import SwiftKeychainWrapper
 
 class PopupNewPostViewController: UIViewController {
     
@@ -15,6 +17,7 @@ class PopupNewPostViewController: UIViewController {
     var preTableIndexPath: IndexPath?
     var preCollectionIndexPath: IndexPath?
     var memeController: NSFetchedResultsController<Meme>!
+    var isImageSelected: Bool = false
     
     @IBOutlet weak var addPostToolbar: UIToolbar!
     @IBOutlet weak var memeTableView: UITableView!
@@ -23,17 +26,17 @@ class PopupNewPostViewController: UIViewController {
     @IBOutlet weak var textLengthLabel: UILabel!
     @IBOutlet weak var memeIntroTextField: UITextField!
     @IBOutlet weak var popupView: UIView!
-    
     @IBOutlet weak var collectionButton: UIButton!
     @IBOutlet weak var tableButton: UIButton!
-    
     @IBOutlet weak var previewImage: CustomPreviewImageView!
     @IBOutlet weak var userImage: CustomUserProfileImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPopViewUI()
         setCollectionViewUI()
+        
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
         self.memeTableView.delegate = self
@@ -45,10 +48,10 @@ class PopupNewPostViewController: UIViewController {
         self.memeIntroTextField.delegate = self
         
         fetchAllMeme()
+        observeFirebaseValue()
         
         memeCollectionView.isHidden = true
         tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
-        previewImage.setBasicPreviewImageUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +60,36 @@ class PopupNewPostViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func observeFirebaseValue() {
+        // get list of memePost from Firebase
+        DataService.instance.REF_USER_CURRENT?.observe(.value, with: { (snapshot) in
+            if let value = snapshot.value as? Dictionary<String, AnyObject> {
+                if let username = value["username"] as? String {
+                    self.userNameLabel.text = username
+                }
+                
+                if let imageUrl = value["imageUrl"] as? String {
+                    self.getUserImageFromFirebaseStorage(imageUrl: imageUrl)
+                }
+            }
+        })
+    }
+    
+    func getUserImageFromFirebaseStorage(imageUrl: String) {
+        let ref = FIRStorage.storage().reference(forURL: imageUrl)
+        ref.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+            if error != nil {
+                print(":::[HPARK] Unable to Download image from Storage \(error):::")
+            } else {
+                if let imageData = data {
+                    if let image = UIImage(data: imageData) {
+                        self.userImage.image = image
+                    }
+                }
+            }
+        })
     }
     
     func fetchAllMeme() {
@@ -96,7 +129,7 @@ class PopupNewPostViewController: UIViewController {
     }
     
     @IBAction func addMemeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "addNewMeme", sender: nil)
+        performSegue(withIdentifier: KEY_SEGUE_ADD_MEME, sender: nil)
     }
     
     @IBAction func tableButtonTapped(_ sender: Any) {
@@ -122,4 +155,55 @@ class PopupNewPostViewController: UIViewController {
         }
     }
     
+    @IBAction func addMemePostButtonTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "포스팅 경고", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default) { action in })
+        
+        guard let caption = memeIntroTextField.text, caption != "" else {
+            alert.message = "메세지를 작성해주세요 ^^"
+            self.present(alert, animated: true)
+            return
+        }
+        guard let image = previewImage.image, isImageSelected == true else {
+            alert.message = "사진을 선택해주세요 ^^"
+            self.present(alert, animated: true)
+            return
+        }
+        if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+            let imageUid = NSUUID().uuidString
+            let metadata = FIRStorageMetadata()
+            metadata.contentType = "image/jpeg"
+            DataService.instance.REF_ST_POST_IMAGES.child(imageUid).put(imageData, metadata: metadata) { (metadata, error) in
+                if error != nil {
+                    print(":::[HPARK] Unable to upload image to storage \(error):::\n ")
+                } else {
+                    if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                        self.memePostToFirebase(imageUrl: downloadURL)
+                        self.view.removeFromSuperview()
+                    }
+                }
+            }
+        }
+    }
+    
+    func memePostToFirebase(imageUrl: String) {
+        if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy년 MM월 dd일 - HH:mm:ss"
+            let postedDate = formatter.string(from: Date())
+            
+            let memePost: Dictionary<String, AnyObject> = [
+                KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
+                KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
+                KEY_DIC_POST_LIKES: 0 as AnyObject,
+                KEY_DIC_POST_USER: uid as AnyObject,
+                KEY_DIC_POST_DATETIME: postedDate as AnyObject
+            ]
+            
+            let firebasePost = DataService.instance.REF_POSTS.childByAutoId()
+            firebasePost.setValue(memePost)
+            
+            self.isImageSelected = false
+        }
+    }
 }

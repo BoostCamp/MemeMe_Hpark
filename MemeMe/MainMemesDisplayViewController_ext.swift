@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -15,10 +16,17 @@ extension MainMemesDisplayViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return memePosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as! MainPageTableViewCell
+        let memePost = memePosts[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: KEY_MAIN_TABLE_CELL) as? MainPageTableViewCell {
+            let memeImage = MainMemesDisplayViewController.imageCache.object(forKey: memePost.imageUrl as NSString)
+            cell.establishCell(memePost: memePost, memeImage: memeImage)
+            return cell
+        }
+        return MainPageTableViewCell()
     }
 }

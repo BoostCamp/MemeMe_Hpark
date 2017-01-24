@@ -41,6 +41,7 @@ class MemeEditorViewController: UIViewController {
     func setNavigationBarUI() {
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+            topItem.backBarButtonItem?.tintColor = UIColor.white
         }
         
         let logo = UIImage(named: "Meme Home Logo")
@@ -85,35 +86,6 @@ class MemeEditorViewController: UIViewController {
         setNavbarAndToolbarVisibility(true)
         view.frame.origin.y = 64
         return memedImage
-    }
-    
-    // get keyboard height and shift the view from bottom to higher
-    func keyboardWillShow(_ notification: Notification) {
-        if bottomMemeTextField.isFirstResponder {
-            view.frame.origin.y = 64 - getKeyboardHeight(notification)
-        }
-    }
-    
-    func keyboardWillHide(_ notification: Notification) {
-        if bottomMemeTextField.isFirstResponder {
-            view.frame.origin.y = 64
-        }
-    }
-    
-    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
-        let userInfo = notification.userInfo
-        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height
-    }
-    
-    func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
-    }
-    
-    func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
     func saveMemedInfo(_ memedImage: UIImage) {
@@ -161,5 +133,34 @@ class MemeEditorViewController: UIViewController {
     @IBAction func saveMemeButtonTapped(_ sender: Any) {
         let memedImage = createMemedImage()
         saveMemedInfo(memedImage)
+    }
+    
+    // get keyboard height and shift the view from bottom to higher
+    func keyboardWillShow(_ notification: Notification) {
+        if bottomMemeTextField.isFirstResponder {
+            view.frame.origin.y = 64 - getKeyboardHeight(notification)
+        }
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        if bottomMemeTextField.isFirstResponder {
+            view.frame.origin.y = 64
+        }
+    }
+    
+    func getKeyboardHeight(_ notification: Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
 }
