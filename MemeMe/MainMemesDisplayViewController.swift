@@ -69,9 +69,7 @@ class MainMemesDisplayViewController: UIViewController {
         try! FIRAuth.auth()?.signOut()
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func homeButtonTapped(_ sender: Any) {
-    }
+
     
     @IBAction func newPostButtonTapped(_ sender: Any) {
         let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController

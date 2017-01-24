@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MainPageTableViewCell.swift"
-            timestampString = "506941499.044621"
+            timestampString = "506944813.850226"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "establishCell(memePost:memeImage:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -260,7 +260,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/EntranceViewController.swift"
@@ -273,14 +273,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemeMe.EntranceViewController.(firebaseAuth (__ObjC.FIRAuthCredential) -&gt; ()).(closure #1)"
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/EntranceViewController.swift"
-                  timestampString = "506941499.258651"
+                  timestampString = "506943944.653479"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -288,14 +288,14 @@
                   offsetFromSymbolStart = "640">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemeMe.EntranceViewController.(firebaseAuth (__ObjC.FIRAuthCredential) -&gt; ()).(closure #1)"
                   moduleName = "MemeMe"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/connect/Desktop/hpark/test/MemeMe/MemeMe/EntranceViewController.swift"
-                  timestampString = "506941499.260644"
+                  timestampString = "506943944.656521"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MemePost.swift"
-            timestampString = "506939357.595094"
+            timestampString = "506944737.742924"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "init(keyPost:dataPost:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -472,11 +472,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemeMe/MainPageTableViewCell.swift"
-            timestampString = "506941499.044621"
+            timestampString = "506943943.488367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "observeFirebaseValue()"
             landmarkType = "7">
          </BreakpointContent>

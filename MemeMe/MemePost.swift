@@ -14,6 +14,7 @@ class MemePost {
     private var _imageUrl: String!
     private var _likes: Int!
     private var _keyPost: String!
+    private var _dateTime: String!
     private var _keyUser: String?
     private var _postRef: FIRDatabaseReference!
     
@@ -37,10 +38,8 @@ class MemePost {
         return _keyUser
     }
     
-    init(caption: String, imageUrl:String, likes: Int) {
-        self._caption = caption
-        self._imageUrl = imageUrl
-        self._likes = likes
+    var dateTime: String {
+        return _dateTime
     }
     
     init(keyPost: String, dataPost: Dictionary<String, AnyObject>) {
@@ -59,6 +58,10 @@ class MemePost {
         
         if let keyUser = dataPost[KEY_DIC_POST_USER] as? String {
             self._keyUser = keyUser
+        }
+        
+        if let dateTime = dataPost[KEY_DIC_POST_DATETIME] as? String {
+            self._dateTime = dateTime
         }
         
         _postRef = DataService.instance.REF_POSTS.child(_keyPost)

@@ -34,7 +34,6 @@ class MainPageTableViewCell: UITableViewCell {
 
     func observeFirebaseValue() {
         if let keyUser = memePost.keyUser {
-            print(keyUser)
             DataService.instance.REF_USERS.child(keyUser).observe(.value, with: { (snapshot) in
                 if let value = snapshot.value as? Dictionary<String, AnyObject> {
                     if let imageUrl = value["imageUrl"] as? String {
@@ -44,6 +43,10 @@ class MainPageTableViewCell: UITableViewCell {
                             self.setImageFromFirebaseStorageWithUrl(imageUrl: imageUrl, isMainImage: false)
                         }
                     }
+                    
+                    if let username = value["username"] as? String {
+                        self.userNameLabel.text = username
+                    }
                 }
             })
         }
@@ -51,7 +54,9 @@ class MainPageTableViewCell: UITableViewCell {
     
     func establishCell(memePost: MemePost, memeImage: UIImage? = nil) {
         self.memePost = memePost
-        self.numberLikesLabel.text = "\(memePost.likes)명의 사람이 당신의 Meme을 좋아합니다"
+        self.numberLikesLabel.text = "\(memePost.likes)명의 사람이 당신의 Meme을 좋아합니다  "
+        self.dateTimeLabel.text = memePost.dateTime
+        
         likesReference = DataService.instance.REF_USER_CURRENT?.child("likes").child(memePost.keyPost)
         if let memeImage = memeImage{
             self.mainImageView.image = memeImage

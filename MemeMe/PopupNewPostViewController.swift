@@ -188,11 +188,16 @@ class PopupNewPostViewController: UIViewController {
     
     func memePostToFirebase(imageUrl: String) {
         if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy년 MM월 dd일"
+            let postedDate = formatter.string(from: Date())
+            
             let memePost: Dictionary<String, AnyObject> = [
                 KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
                 KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
                 KEY_DIC_POST_LIKES: 0 as AnyObject,
-                KEY_DIC_POST_USER: uid as AnyObject
+                KEY_DIC_POST_USER: uid as AnyObject,
+                KEY_DIC_POST_DATETIME: postedDate as AnyObject
             ]
             
             let firebasePost = DataService.instance.REF_POSTS.childByAutoId()
