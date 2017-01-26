@@ -34,6 +34,10 @@ class MainMemesDisplayViewController: UIViewController {
         memesDisplayTableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     func observeFirebaseValue() {
         // get list of memePosts from Firebase
         DataService.instance.REF_POSTS.observe(.value, with: { (snapshot) in
