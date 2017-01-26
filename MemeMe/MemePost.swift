@@ -43,28 +43,19 @@ class MemePost {
     }
     
     init(keyPost: String, dataPost: Dictionary<String, AnyObject>) {
-        self._keyPost = keyPost
-        if let caption = dataPost[KEY_DIC_POST_CAPTION] as? String {
+        if let caption = dataPost[IdForMemePost.caption] as? String,
+            let imageUrl = dataPost[IdForMemePost.imageUrl] as? String,
+            let likes = dataPost[IdForMemePost.likes] as? Int,
+            let keyUser = dataPost[IdForMemePost.user] as? String,
+            let dateTime = dataPost[IdForMemePost.dateTime] as? String {
             self._caption = caption
-        }
-        
-        if let imageUrl = dataPost[KEY_DIC_POST_IMAGE_URL] as? String {
             self._imageUrl = imageUrl
-        }
-        
-        if let likes = dataPost[KEY_DIC_POST_LIKES] as? Int {
             self._likes = likes
-        }
-        
-        if let keyUser = dataPost[KEY_DIC_POST_USER] as? String {
             self._keyUser = keyUser
-        }
-        
-        if let dateTime = dataPost[KEY_DIC_POST_DATETIME] as? String {
             self._dateTime = dateTime
+            self._keyPost = keyPost
+            _postRef = DataService.instance.REF_POSTS.child(_keyPost)
         }
-        
-        _postRef = DataService.instance.REF_POSTS.child(_keyPost)
     }
     
     func changeLikesNumber(addLike: Bool) {

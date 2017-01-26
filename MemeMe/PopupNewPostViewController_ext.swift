@@ -16,15 +16,14 @@ extension PopupNewPostViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = memeTableView.dequeueReusableCell(withIdentifier: KEY_MEME_TABLE_CELL, for: indexPath) as! MemeTableViewCell
+        let cell = memeTableView.dequeueReusableCell(withIdentifier: IdForCell.memeTable, for: indexPath) as! MemeTableViewCell
         establishMemeCell(cell: cell, indexPath: indexPath)
-        
         return cell
     }
     
     // when selected particular cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let objs = memeController.fetchedObjects , objs.count > 0 {
+        if let objs = memeController.fetchedObjects, objs.count > 0 {
             self.isImageSelected = true
             let meme = objs[indexPath.row]
             self.previewImage.image = meme.memeImage as! UIImage?
@@ -109,7 +108,7 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = memeCollectionView.dequeueReusableCell(withReuseIdentifier: KEY_MEME_COLLECTION_CELL, for: indexPath) as! MemeCollectionViewCell
+        let cell = memeCollectionView.dequeueReusableCell(withReuseIdentifier: IdForCell.memeCollection, for: indexPath) as! MemeCollectionViewCell
         let meme = self.memeController.object(at: indexPath)
         cell.establishMemeCell(meme: meme)
         
@@ -127,7 +126,6 @@ extension PopupNewPostViewController: UICollectionViewDelegate, UICollectionView
         newlySelectedCell.layer.borderWidth = 1.8
         newlySelectedCell.layer.borderColor = UIColor.red.cgColor
         self.preCollectionIndexPath = indexPath
-        
         self.previewImage.image = newlySelectedCell.memeImageView.image
         
         if let objs = memeController.fetchedObjects, objs.count > 0 {

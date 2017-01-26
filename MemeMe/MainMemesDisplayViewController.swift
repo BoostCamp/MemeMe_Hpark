@@ -15,7 +15,6 @@ import CoreData
 class MainMemesDisplayViewController: UIViewController {
     
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
-    
     var memePosts = [MemePost]()
     
     @IBOutlet weak var newPostButton: UIButton!
@@ -29,10 +28,6 @@ class MainMemesDisplayViewController: UIViewController {
         self.memesDisplayTableView.dataSource = self
         
         observeFirebaseValue()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     func observeFirebaseValue() {
@@ -69,25 +64,25 @@ class MainMemesDisplayViewController: UIViewController {
     }
 
     @IBAction func menuBarButtonTapped(_ sender: Any) {
-        KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        KeychainWrapper.standard.removeObject(forKey: IdForKeyChain.uid)
         do {
             try FIRAuth.auth()?.signOut()
+            dismiss(animated: true, completion: nil)
         } catch {
             let error = error as NSError
             print(":::[HPARK] Sign Out Failure \(error) :::\n")
         }
-        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func newPostButtonTapped(_ sender: Any) {
-        let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpNewPost") as! PopupNewPostViewController
+        let popOverNewPostViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: IdForViewController.popUpNewPost) as! PopupNewPostViewController
         self.addChildViewController(popOverNewPostViewController)
-        popOverNewPostViewController.view.frame = CGRect(x: 0, y: -26, width: view.frame.size.width, height: view.frame.size.height + 26)
+        popOverNewPostViewController.view.frame = CGRect(x: 0, y: -24, width: view.frame.size.width, height: view.frame.size.height + 24)
         self.view.addSubview(popOverNewPostViewController.view)
         popOverNewPostViewController.didMove(toParentViewController: self)
     }
     
     @IBAction func settingsButtonTapped(_ sender: UIButton) {
-        performSegue(withIdentifier: KEY_SEGUE_USER_PROFILE, sender: nil)
+        performSegue(withIdentifier: IdForSegue.userProfile, sender: nil)
     }
 }

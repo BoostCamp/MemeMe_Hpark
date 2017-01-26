@@ -19,9 +19,7 @@ class CustomUserProfileImageView: UIImageView {
         self.layer.shadowRadius = 10.0
         self.layer.shadowOffset = CGSize(width: 0.1, height: 4.0)
     }
-    
-    override func draw(_ rect: CGRect) {
-    }
+
     
     override func layoutSubviews() {
         self.layer.masksToBounds = true
@@ -29,5 +27,4 @@ class CustomUserProfileImageView: UIImageView {
         self.layer.borderWidth = 2.0
         self.layer.borderColor = UIColor.white.cgColor
     }
-
 }

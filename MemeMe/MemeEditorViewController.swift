@@ -13,6 +13,7 @@ class MemeEditorViewController: UIViewController {
     var activityButton:UIButton?
     @IBOutlet weak var imagePickedByUserView: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var topMemeTextField: CustomMemeTextField!
     @IBOutlet weak var bottomMemeTextField: CustomMemeTextField!
     @IBOutlet weak var editorOptionToolbar: UIToolbar!
@@ -21,10 +22,11 @@ class MemeEditorViewController: UIViewController {
         super.viewDidLoad()
         setNavigationBarUI()
         
-        setTextFieldAttribute(key: KEY_TEXT_FIELD_TOP)
-        setTextFieldAttribute(key: KEY_TEXT_FIELD_BOTTOM)
+        setTextFieldAttribute(key: MemeTextPosition.top)
+        setTextFieldAttribute(key: MemeTextPosition.bottom)
         
         activityButton?.isEnabled = false
+        saveButton.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +43,6 @@ class MemeEditorViewController: UIViewController {
     func setNavigationBarUI() {
         if let topItem = self.navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-            topItem.backBarButtonItem?.tintColor = UIColor.white
         }
         
         let logo = UIImage(named: "Meme Home Logo")
@@ -60,10 +61,10 @@ class MemeEditorViewController: UIViewController {
     }
     
     func setTextFieldAttribute(key: String) {
-        if key == KEY_TEXT_FIELD_TOP {
+        if key == MemeTextPosition.top {
             self.topMemeTextField.text = key
             self.topMemeTextField.delegate = self
-        } else if key == KEY_TEXT_FIELD_BOTTOM {
+        } else if key == MemeTextPosition.bottom {
             self.bottomMemeTextField.text = key
             self.bottomMemeTextField.delegate = self
         }
@@ -91,26 +92,20 @@ class MemeEditorViewController: UIViewController {
     func saveMemedInfo(_ memedImage: UIImage) {
         var meme: Meme!
         meme = Meme(context: context)
-        
-        if let textTop = topMemeTextField.text {
-            meme.textTop = textTop
+        guard let textTop = topMemeTextField.text, let textBottom = bottomMemeTextField.text else {
+            return
         }
         
-        if let textBottom = bottomMemeTextField.text {
-            meme.textBottom = textBottom
-        }
-        
+        meme.textTop = textTop
+        meme.textBottom = textBottom
         meme.memeImage = memedImage
         meme.created = NSDate()
-        
         appDelegate.saveContext()
+        
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    func activityButtonTapped() {
-        let memedImage = createMemedImage()
-        let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        
+    func performActivityCompletionHandler(activity: UIActivityViewController, memedImage:UIImage) {
         activity.completionWithItemsHandler = {(activityType: UIActivityType?, completed:Bool, returnedItems:[Any]?, error: Error?) in
             if completed {
                 self.saveMemedInfo(memedImage)
@@ -118,6 +113,12 @@ class MemeEditorViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             }
         }
+    }
+    
+    func activityButtonTapped() {
+        let memedImage = createMemedImage()
+        let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        performActivityCompletionHandler(activity: activity, memedImage: memedImage)
         present(activity, animated: true, completion: nil)
     }
     

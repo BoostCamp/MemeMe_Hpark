@@ -18,11 +18,11 @@ class DataService {
     
     // Database References
     private var _REF_BASE = DB_BASE
-    private var _REF_POSTS = DB_BASE.child(KEY_DATABASE_POSTS)
-    private var _REF_USERS = DB_BASE.child(KEY_DATABASE_USERS)
+    private var _REF_POSTS = DB_BASE.child(IdForFirebaseRef.databasePosts)
+    private var _REF_USERS = DB_BASE.child(IdForFirebaseRef.databaseUsers)
     
     // Storage References
-    private var _REF_ST_POST_IMAGES = STORAGE_BASE.child(KEY_STORAGE_POST_IMAGES)
+    private var _REF_ST_POST_IMAGES = STORAGE_BASE.child(IdForFirebaseRef.storageImages)
     
     // User currently signed in
     
@@ -39,7 +39,7 @@ class DataService {
     }
     
     var REF_USER_CURRENT: FIRDatabaseReference? {
-        guard let uid = KeychainWrapper.standard.string(forKey: KEY_UID) else {
+        guard let uid = KeychainWrapper.standard.string(forKey: IdForKeyChain.uid) else {
             return nil
         }
         let user = REF_USERS.child(uid)

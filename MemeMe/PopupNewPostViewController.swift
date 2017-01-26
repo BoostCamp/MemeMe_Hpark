@@ -53,14 +53,6 @@ class PopupNewPostViewController: UIViewController {
         memeCollectionView.isHidden = true
         tableButton.setImage(UIImage(named:"icon table picked"), for: .normal)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     
     func observeFirebaseValue() {
         // get list of memePost from Firebase
@@ -94,7 +86,7 @@ class PopupNewPostViewController: UIViewController {
     
     func fetchAllMeme() {
         let fetchRequest: NSFetchRequest<Meme> = Meme.fetchRequest()
-        let sortByDate = NSSortDescriptor(key: KEY_SORT_DATA_BY_DATE, ascending:true)
+        let sortByDate = NSSortDescriptor(key: IdForSort.byDate, ascending:true)
         fetchRequest.sortDescriptors = [sortByDate]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -116,7 +108,6 @@ class PopupNewPostViewController: UIViewController {
     func setCollectionViewUI() {
         let interItemSpace: CGFloat = 0.0
         let lineSpace: CGFloat = 0.0
-        
         let demensionWidth = (popupView.frame.size.width) / 4.0
         
         collectionViewFlowLayout.minimumInteritemSpacing = interItemSpace
@@ -129,7 +120,7 @@ class PopupNewPostViewController: UIViewController {
     }
     
     @IBAction func addMemeButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: KEY_SEGUE_ADD_MEME, sender: nil)
+        performSegue(withIdentifier: IdForSegue.addMemes, sender: nil)
     }
     
     @IBAction func tableButtonTapped(_ sender: Any) {
@@ -155,18 +146,21 @@ class PopupNewPostViewController: UIViewController {
         }
     }
     
+    func presentAlert(controller: UIAlertController, message:String) {
+        controller.message = message
+        self.present(controller, animated: true)
+    }
+    
     @IBAction func addMemePostButtonTapped(_ sender: Any) {
         let alert = UIAlertController(title: "포스팅 경고", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default) { action in })
         
         guard let caption = memeIntroTextField.text, caption != "" else {
-            alert.message = "메세지를 작성해주세요 ^^"
-            self.present(alert, animated: true)
+            presentAlert(controller: alert, message: "메세지를 작성해주세요 ^^")
             return
         }
         guard let image = previewImage.image, isImageSelected == true else {
-            alert.message = "사진을 선택해주세요 ^^"
-            self.present(alert, animated: true)
+            presentAlert(controller: alert, message: "사진을 선택해주세요 ^^")
             return
         }
         if let imageData = UIImageJPEGRepresentation(image, 0.2) {
@@ -187,17 +181,17 @@ class PopupNewPostViewController: UIViewController {
     }
     
     func memePostToFirebase(imageUrl: String) {
-        if let uid = KeychainWrapper.standard.string(forKey: KEY_UID) {
+        if let uid = KeychainWrapper.standard.string(forKey: IdForKeyChain.uid) {
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy년 MM월 dd일 - HH:mm:ss"
             let postedDate = formatter.string(from: Date())
             
             let memePost: Dictionary<String, AnyObject> = [
-                KEY_DIC_POST_CAPTION: memeIntroTextField.text! as AnyObject,
-                KEY_DIC_POST_IMAGE_URL: imageUrl as AnyObject,
-                KEY_DIC_POST_LIKES: 0 as AnyObject,
-                KEY_DIC_POST_USER: uid as AnyObject,
-                KEY_DIC_POST_DATETIME: postedDate as AnyObject
+                IdForMemePost.caption: memeIntroTextField.text! as AnyObject,
+                IdForMemePost.imageUrl: imageUrl as AnyObject,
+                IdForMemePost.likes: 0 as AnyObject,
+                IdForMemePost.user: uid as AnyObject,
+                IdForMemePost.dateTime: postedDate as AnyObject
             ]
             
             let firebasePost = DataService.instance.REF_POSTS.childByAutoId()

@@ -26,6 +26,7 @@ extension MemeEditorViewController: UIImagePickerControllerDelegate, UINavigatio
             imagePickedByUserView.image = image
             imagePickedByUserView.contentMode = .scaleAspectFill
             activityButton?.isEnabled = true
+            saveButton.isEnabled = true
         }
         picker.dismiss(animated: true, completion: nil)
     }
@@ -48,9 +49,9 @@ extension MemeEditorViewController: UITextFieldDelegate {
     // when start editing text in text field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.topMemeTextField {
-            clearDefaultText(textField: textField, compare: KEY_TEXT_FIELD_TOP)
+            clearDefaultText(textField: textField, compare: MemeTextPosition.top)
         } else if textField == self.bottomMemeTextField {
-            clearDefaultText(textField: textField, compare: KEY_TEXT_FIELD_BOTTOM)
+            clearDefaultText(textField: textField, compare: MemeTextPosition.bottom)
         }
     }
     

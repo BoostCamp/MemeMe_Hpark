@@ -64,9 +64,9 @@ class SignInWithEmailViewController: UIViewController {
                     if let user = user, let email = user.email {
                         let dataUser = ["provider": user.providerID, "email": email]
                         DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
-                        KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                        KeychainWrapper.standard.set(user.uid, forKey: IdForKeyChain.uid)
                     }
-                    self.performSegue(withIdentifier: KEY_SEGUE_MEMES_DISPLAY_BY_EMAIL, sender: nil)
+                    self.performSegue(withIdentifier: IdForSegue.displayMemesByEmail, sender: nil)
                 } else {
                     print(":::[HPARK] Login failed with \(error) :::\n")
                     self.presentAlert(controller: alert, message: Alerts.wrong)

@@ -16,10 +16,6 @@ class CustomPreviewImageView: UIImageView {
     override func draw(_ rect: CGRect) {
         // Drawing code
     }
- 
-    func setBasicPreviewImageUI() {
-        
-    }
     
     override func layoutSubviews() {
         self.layer.masksToBounds = true

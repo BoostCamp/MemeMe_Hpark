@@ -8,38 +8,54 @@
 
 import Foundation
 
-let KEY_UID = "uid"
+struct IdForKeyChain {
+    static let uid = "uid"
+}
 
 // initial word of top and bottom textfield in meme editor view controller
-let KEY_TEXT_FIELD_TOP = "TOP"
-let KEY_TEXT_FIELD_BOTTOM = "BOTTOM"
+struct MemeTextPosition {
+    static let top = "TOP"
+    static let bottom = "BOTTOM"
+}
 
 // key for sorting in CoreData
-let KEY_SORT_DATA_BY_DATE = "created"
+struct IdForSort {
+    static let byDate = "created"
+}
+
+struct IdForViewController {
+    static let popUpNewPost = "popUpNewPost"
+}
 
 // key identifier for particular cell
-let KEY_MEME_TABLE_CELL = "MemeTableViewCell"
-let KEY_MEME_COLLECTION_CELL = "MemeCollectionViewCell"
-let KEY_MAIN_TABLE_CELL = "MainPageTableViewCell"
+struct IdForCell {
+    static let memeTable = "MemeTableViewCell"
+    static let memeCollection = "MemeCollectionViewCell"
+    static let mainPageTable = "MainPageTableViewCell"
+}
 
 // key identifier for segueway
-let KEY_SEGUE_MEMES_DISPLAY = "wayToMemesDisplay"
-let KEY_SEGUE_MEMES_DISPLAY_BY_EMAIL = "wayToMemesDisplayByEmail"
-let KEY_SEGUE_USER_PROFILE = "wayToUserProfile"
-let KEY_SEGUE_ADD_MEME = "wayToAddNewMeme"
+struct IdForSegue {
+    static let displayMemes = "wayToMemesDisplay"
+    static let displayMemesByEmail = "wayToMemesDisplayByEmail"
+    static let userProfile = "wayToUserProfile"
+    static let addMemes = "wayToAddNewMeme"
+}
 
 // Firebase references identifier
-let KEY_DATABASE_POSTS = "posts"
-let KEY_DATABASE_USERS = "users"
-let KEY_STORAGE_POST_IMAGES = "post-images"
+struct IdForFirebaseRef {
+    static let databasePosts = "posts"
+    static let databaseUsers = "users"
+    static let storageImages = "post-images"
+}
 
 // Dictionary key - memePost model
-let KEY_DIC_POST_CAPTION = "caption"
-let KEY_DIC_POST_IMAGE_URL = "imageUrl"
-let KEY_DIC_POST_USER = "user"
-let KEY_DIC_POST_LIKES = "likes"
-let KEY_DIC_POST_COMMENTS = "comments"
-let KEY_DIC_POST_DATETIME = "dateTime"
-
+struct IdForMemePost {
+    static let caption = "caption"
+    static let imageUrl = "imageUrl"
+    static let user = "user"
+    static let likes = "likes"
+    static let dateTime = "dateTime"
+}
 
 

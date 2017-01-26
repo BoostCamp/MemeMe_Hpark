@@ -25,8 +25,8 @@ class EntranceViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: KEY_SEGUE_MEMES_DISPLAY, sender: nil)
+        if let _ = KeychainWrapper.standard.string(forKey: IdForKeyChain.uid) {
+            performSegue(withIdentifier: IdForSegue.displayMemes, sender: nil)
         }
     }
     
@@ -56,9 +56,9 @@ class EntranceViewController: UIViewController {
                 if let user = user, let email = user.email {
                     let dataUser = ["provider": credential.provider, "email": email]
                     DataService.instance.createFirebaseDatabaseUser(uid: user.uid, dataUser: dataUser)
-                    KeychainWrapper.standard.set(user.uid, forKey: KEY_UID)
+                    KeychainWrapper.standard.set(user.uid, forKey: IdForKeyChain.uid)
                 }
-                self.performSegue(withIdentifier: KEY_SEGUE_MEMES_DISPLAY, sender: nil)
+                self.performSegue(withIdentifier: IdForSegue.displayMemes, sender: nil)
             }
         })
     }
