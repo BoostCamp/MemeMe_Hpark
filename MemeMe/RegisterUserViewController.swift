@@ -141,13 +141,13 @@ class RegisterUserViewController: UIViewController {
     
     // get keyboard height and shift the view from bottom to higher
     func keyboardWillShow(_ notification: Notification) {
-        if emailField.isFirstResponder || passwordField.isFirstResponder || userNameField.isFirstResponder || passwordConfirmField.isFirstResponder {
+        if passwordField.isFirstResponder || passwordConfirmField.isFirstResponder {
             view.frame.origin.y = 0 - getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(_ notification: Notification) {
-        if emailField.isFirstResponder || passwordField.isFirstResponder || userNameField.isFirstResponder || passwordConfirmField.isFirstResponder {
+        if passwordField.isFirstResponder || passwordConfirmField.isFirstResponder {
             view.frame.origin.y = 0
         }
     }

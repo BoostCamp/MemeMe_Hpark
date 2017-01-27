@@ -60,8 +60,9 @@ class UserProfileViewController: UIViewController {
                     self.emailLabel.text = "Email : \(email)"
                 }
                 if let imageUrl = value["imageUrl"] as? String {
-                    let image = MainMemesDisplayViewController.imageCache.object(forKey: imageUrl as NSString)
-                    self.userImage.image = image
+                    if let image = MainMemesDisplayViewController.imageCache.object(forKey: imageUrl as NSString) {
+                        self.userImage.image = image
+                    }
                 }
             }
         })
