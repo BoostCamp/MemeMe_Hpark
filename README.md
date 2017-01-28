@@ -46,9 +46,7 @@
 
 ### 구현 화면
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/1.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/2.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/3.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/4.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/5.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/6.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/7.png" width="320">
@@ -64,7 +62,10 @@
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/17.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/18.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/19.png" width="320">
-
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/20.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/21.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/22.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/23.png" width="320">
 
 
 
