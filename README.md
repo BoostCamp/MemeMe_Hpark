@@ -5,7 +5,7 @@
 * Second assignment for boostcamp
 
 ### 동영상 시연 : https://www.youtube.com/watch?v=ZpGM7R0znsg
-[![ScreenShot](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=ZpGM7R0znsg)
+[![ScreenShot](https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/play.png)](https://www.youtube.com/watch?v=ZpGM7R0znsg)
 
 ### 어플리케이션 기본기능
 * Meme 제작기능
@@ -45,27 +45,24 @@
     * 자신의 개인 이미지와 닉네임 수정가능
 
 ### 구현 화면
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/1.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/3.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/5.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/6.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/7.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/8.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/9.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/10.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/11.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/12.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/13.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/14.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/15.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/16.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/17.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/18.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/19.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/20.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/21.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/22.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/23.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/1.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/3.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/5.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/7.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/8.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/9.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/10.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/11.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/12.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/13.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/15.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/16.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/17.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/18.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/19.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/20.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/22.png" width="280">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/23.png" width="280">
 
 
 
