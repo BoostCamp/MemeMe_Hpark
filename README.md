@@ -45,6 +45,8 @@
     * 자신의 개인 이미지와 닉네임 수정가능
 
 ### 구현 화면
+
+![alt tag](https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/1.png)
 <img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/1.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/2.png" width="320">
 <img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/3.png" width="320">
