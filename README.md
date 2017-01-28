@@ -45,27 +45,25 @@
     * 자신의 개인 이미지와 닉네임 수정가능
 
 ### 구현 화면
-
-![alt tag](https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/1.png)
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/1.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/2.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/3.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/4.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/5.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/6.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/7.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/8.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/9.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/10.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/11.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/12.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/13.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/14.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/15.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/16.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/17.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/18.png" width="320">
-<img src="https://github.com/BoostCamp/MemeMe_hPark/tree/master/img/19.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/1.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/2.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/3.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/4.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/5.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/6.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/7.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/8.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/9.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/10.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/11.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/12.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/13.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/14.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/15.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/16.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/17.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/18.png" width="320">
+<img src="https://github.com/BoostCamp/MemeMe_hPark/blob/master/img/19.png" width="320">
 
 
 
